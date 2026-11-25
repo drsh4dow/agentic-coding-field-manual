@@ -1,35 +1,53 @@
-# Agentic Coding Field Manual
+# Agentic coding field manual
 
-I was skeptical about AI coding until I hurt my hand and had to find a better way to keep shipping. I didn't want to fall into "vibe coding" - just accepting whatever the model spits out and hoping it works. So I distilled a workflow from what I've learned and what others have proven - one that keeps you in control without sacrificing speed.
+I started using coding agents after I hurt my hand. The first version of this manual described the setup I built then: one agent in one terminal, plan mode, a diff I read before every commit. Its thesis was "you drive, AI types."
 
-That's what this manual is about.
+That stopped describing my work. Today one chat at my terminal coordinates a fleet of agents. They build in their own git worktrees, review each other across model vendors, merge their own pull requests when I grant it, and check the result in staging and production. Some runs last days. I type little code, and I don't read every diff.
 
-## Who This Is For
+My part is narrower and harder. I decide where the work goes, and I judge what comes back. This manual is about spending my attention on those two jobs and on nothing else.
 
-Engineers who ship production software and want to move faster without losing their judgment. Not hobbyists. Not people who want AI to "build my app."
+I rewrote it from evidence. I read two weeks of my own sessions: 84 working sessions across my agent setup, two projects at work, and an open source router. Every practice here is something I did, or a correction I had to make more than once.
 
-If you don't already have opinions about linting, type systems, and test strategy, start there first. This manual assumes you do.
+## The new problem
 
-## The Core Problem
+The old risk was loss of agency. You stop thinking and become a passenger in your own codebase. That risk is still here, but volume changed its shape. The [No AI Slop manifesto](https://www.slopmanifesto.com/) says it in its first belief:
 
-The biggest risk of AI coding isn't bad code - linters catch that. It's **loss of agency**. A gradual, barely noticeable surrender of control over your own codebase. It shows up in five ways:
+> AI is the most useful tool most of us have ever worked with, but a swarm of agents can produce more work in a single day than a person can review in our lifetime.
 
-**You stop thinking.** The model always has an answer, so you stop forming your own. Architectural instincts atrophy. Six months in, you can't design a system without prompting an LLM first.
+And it defines the cost:
 
-**You stop reading.** Diffs get accepted with a glance. You build on unreviewed code, then ask the AI to fix what breaks. You become a passenger in your own codebase.
+> Slop is when we put less effort into producing something than we ask the consumer to spend understanding it.
 
-**You get average output.** The model produces the statistical mean of its training data. Default configs, tutorial patterns, mock-heavy tests that pass but verify nothing. Without constraints, everything converges to mediocre.
+With one agent, typing was the bottleneck. With a fleet, I am the bottleneck, because my reading time runs out first. An agent that sends me a 25-item action list, a 20,000-line pull request, or a status update full of its own invented terms has moved its work onto me. That is slop, even when every line in it is correct.
 
-**You lose context.** Long sessions degrade. The model contradicts earlier decisions, introduces subtle inconsistencies, and drifts from the plan. Each individual diff looks fine; the aggregate doesn't.
+## The mental model
 
-**You mistake speed for quality.** Shipping faster feels like shipping better. Design thinking gets skipped because "I can always regenerate it." But regeneration without judgment is just churn.
+The manifesto lists five values. Each one maps to a rule I hold agents to.
 
-Every chapter in this manual targets at least one of these. The goal is the same throughout: you stay in control.
+| Value | What it means in my setup |
+| --- | --- |
+| Outcomes over output | Every task starts with a definition of done I can measure. Lines, PR counts, and agent counts don't matter. |
+| Understanding over speed | Agents restate the goal and question the premise before they build. |
+| Our own thinking over a model's first draft | I set the destination and correct the premise. The agent proposes the route. |
+| Better work over easier work | Proof on the real system, a reviewer from another vendor, and a pass that deletes code. |
+| Improving the system over patching the output | A mistake I correct twice becomes a rule, a check, or a gate. |
 
-## The Mental Model
+In short, **I own the destination and the judgment, and agents do the work.** The rest of this manual is about keeping my attention on the first part.
 
-AI is a fast typist with encyclopedic knowledge and no stake in your system. It produces statistically average code - the mean of everything it's seen. Left unconstrained, you get the average of every tutorial, every Stack Overflow answer, every GitHub repo in its training data.
+## What is in this manual
 
-Your job is to constrain it: tell it *what* to build, *how* to build it, think alongside it on the hard problems, and reject anything that doesn't meet your standards.
+- [The harness](01-harness.md) describes the setup the rest of the manual assumes.
+- [The repo agents work in](02-the-repo.md) covers the shared documents, checks, and tests a repo needs before agents touch it.
+- [Align before autonomy](03-align.md) is how a task gets a destination before any agent runs alone.
+- [Delegate the work](04-delegate.md) is how the work gets split across agents and how far they may go.
+- [Verify in proportion to the stakes](05-verify.md) is what counts as done, and what proof costs.
+- [Subtract](06-subtract.md) is the habit agents lack most.
+- [Write for the reader](07-write.md) is the manifesto applied to every word an agent produces.
+- [Sessions end, work doesn't](08-memory.md) is how work survives restarts, compaction, and handoffs.
+- [Fix the system, not the output](09-fix-the-system.md) is how a correction becomes structure.
+- [Anti-patterns](10-anti-patterns.md) lists the failures I corrected most often.
+- [The appendix](appendix-manifesto.md) maps each clause of the manifesto to the practice that serves it.
 
-You drive. AI types.
+## Who this is for
+
+Engineers who already ship with coding agents and now run more than one at a time. If you still decide whether to use agents at all, read the manifesto first. This manual assumes you already have opinions about linting, types, and tests.

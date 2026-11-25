@@ -9,23 +9,21 @@
     "node_modules/**"
   ],
   "words": [
+    "Addy",
     "agentic",
-    "Anthropic",
-    "bunx",
-    "culting",
-    "Codex",
-    "context7",
-    "heisenberg",
-    "llms",
-    "lazycheck",
-    "mdbook",
-    "OpenCode",
-    "playwright",
+    "dogfood",
+    "evals",
+    "Herdr",
+    "Osmani",
+    "oxlint",
     "Pocock",
-    "Shadcn",
-    "testcontainers",
-    "Turborepo",
+    "pstack",
+    "pushback",
+    "reengineering",
+    "unpushed",
     "unreviewed",
-    "webfetch"
+    "unslop",
+    "worktree",
+    "worktrees"
   ]
 }
