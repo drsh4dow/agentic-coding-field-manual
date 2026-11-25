@@ -40,9 +40,9 @@ Consolidation has a limit. When each merge deploys to production, separate pull 
 
 ## Subtract from the product, too
 
-- In my router: "Nobody uses the pin command. Drop it."
+- In phi-router: "Nobody uses the pin command. Drop it."
 - An undo feature for an automation was "a catastrophic design failure that leads to a lot of edge cases." We removed it.
-- On the router: "anything more is just bloat, anything more has to be actively removed to simplify."
+- The target for phi-router is what HIPAA compliance needs: "anything more is just bloat, anything more has to be actively removed to simplify."
 
 Subtraction needs evidence like any other change. On a different project I wanted to drop a pinning feature too, and the agent proposed measuring its use first. The numbers showed people used it. It stayed.
 

@@ -4,7 +4,7 @@
 
 ---
 
-- [The harness](./01-harness.md)
+- [The harness at work](./01-harness.md)
 - [The repo agents work in](./02-the-repo.md)
 - [Align before autonomy](./03-align.md)
 - [Delegate the work](./04-delegate.md)
@@ -18,3 +18,4 @@
 ---
 
 - [Appendix: the manifesto, clause by clause](./appendix-manifesto.md)
+- [Appendix: the harness, for reference](./appendix-harness.md)

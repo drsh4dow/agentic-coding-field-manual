@@ -6,7 +6,7 @@ That stopped describing my work. Today one chat at my terminal coordinates a fle
 
 My part is narrower and harder. I decide where the work goes, and I judge what comes back. This manual is about spending my attention on those two jobs and on nothing else.
 
-I rewrote it from evidence. I read two weeks of my own sessions: 84 working sessions across my agent setup, two projects at work, and an open source router. Every practice here is something I did, or a correction I had to make more than once.
+I rewrote it from evidence. I read two weeks of my own sessions: 84 working sessions across my agent setup, two projects at work, and phi-router, an open source project of mine. Every practice here is something I did, or a correction I had to make more than once.
 
 ## The new problem
 
@@ -36,7 +36,7 @@ The manifesto lists five values. Each one maps to a rule I hold agents to.
 
 ## What is in this manual
 
-- [The harness](01-harness.md) describes the setup the rest of the manual assumes.
+- [The harness at work](01-harness.md) follows one real project through my setup, start to finish.
 - [The repo agents work in](02-the-repo.md) covers the shared documents, checks, and tests a repo needs before agents touch it.
 - [Align before autonomy](03-align.md) is how a task gets a destination before any agent runs alone.
 - [Delegate the work](04-delegate.md) is how the work gets split across agents and how far they may go.
@@ -46,7 +46,8 @@ The manifesto lists five values. Each one maps to a rule I hold agents to.
 - [Sessions end, work doesn't](08-memory.md) is how work survives restarts, compaction, and handoffs.
 - [Fix the system, not the output](09-fix-the-system.md) is how a correction becomes structure.
 - [Anti-patterns](10-anti-patterns.md) lists the failures I corrected most often.
-- [The appendix](appendix-manifesto.md) maps each clause of the manifesto to the practice that serves it.
+- [The manifesto appendix](appendix-manifesto.md) maps each clause of the manifesto to the practice that serves it.
+- [The harness appendix](appendix-harness.md) lists the parts of my setup for reference.
 
 ## Who this is for
 

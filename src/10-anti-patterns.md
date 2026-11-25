@@ -18,11 +18,11 @@ The rest:
 
 **Escalating what is already decided.** An agent wanted to rotate a password I had already judged safe, after I had told it to drop the matter. Raise a risk once, with evidence, and then respect the decision.
 
-**Locking the human out.** A safety control in my router stopped me from switching models in my own session. "If I choose to break the seal, that is something I choose." A control that guards against agents must not overrule the human.
+**Locking the human out.** A safety control in phi-router stopped me from switching models in my own session. "If I choose to break the seal, that is something I choose." A control that guards against agents must not overrule the human.
 
 **Asking what it could find out.** Credentials sat in the vault. A meeting about a user's workload sat transcribed in the evidence folder, and the agent asked me about it anyway. "It is transcribed and in your evidence already."
 
-**Caution that kills the value.** The first version of my router sent so many requests to the compliant account that it cut costs by only 18%. The target was 80% or more. A fail-closed default is right only when it leaves the product useful.
+**Caution that kills the value.** The first version of phi-router sent so many requests to the compliant account that it cut costs by only 18%. The target was 80% or more. A fail-closed default is right only when it leaves the product useful.
 
 **Heartbeats with nothing in them.** A "nothing changed" report every few hours is noise. Report when something changes, and slow the reports down when nothing will.
 

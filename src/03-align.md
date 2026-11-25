@@ -65,6 +65,6 @@ Sometimes I can't judge a plan because I can't see it. "I still can't visualize 
 An agent that agrees with everything is no help. I want pushback, with evidence:
 
 - I called some infrastructure rules hallucinations from an earlier agent. The agent showed with `git blame` that a colleague wrote them. I kept them.
-- I wanted the router shipped as a single binary. The agent measured 82 MB and argued against it. I dropped the idea.
+- I wanted phi-router shipped as a single binary. The agent measured 82 MB and argued against it. I dropped the idea.
 
-Pushback is not license to change the task. The agent can argue about the route, but the intent is mine. When I asked an agent to design a router that sends requests holding patient data to a compliant account, it wrote me a compliance audit of the routing policy I had already decided. "I'm not asking you to audit this. You are deviating from the task."
+Pushback is not license to change the task. The agent can argue about the route, but the intent is mine. When I asked an agent to design phi-router's routing, it wrote me a compliance audit of the routing policy I had already decided. "I'm not asking you to audit this. You are deviating from the task."

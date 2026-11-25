@@ -1,77 +1,61 @@
-# The harness
+# The harness at work
 
-My setup is [pi-harness](https://github.com/drsh4dow/pi-harness). It is a config folder for the [pi](https://github.com/earendil-works/pi) coding agent, plus panels for the [Herdr](https://herdr.dev/) terminal app. It is open source. You don't need it to use this manual. Every practice in later chapters maps to a piece of it, so this chapter describes the pieces first.
+My setup is [pi-harness](https://github.com/drsh4dow/pi-harness). It is an open source config folder for the [pi](https://github.com/earendil-works/pi) coding agent, plus panels for the [Herdr](https://herdr.dev/) terminal app. You don't need it to use this manual. This chapter follows one real project through it, start to finish. [The harness appendix](appendix-harness.md) lists every part for reference.
 
-The old manual asked for a tool with plan mode, LSP access, and conversation forking. Those still help. Running a fleet needs more:
+## The project
 
-- Agents that start other agents and wait on them, without me relaying messages.
-- Instructions that load when they apply, so the prompt stays small.
-- State that outlives a session.
-- Gates that hold when an agent would rather skip them.
-- A live view of what every agent is doing.
+[phi-router](https://github.com/drsh4dow/phi-router) is my open source router for the coding agents pi, Claude Code, and Codex. It sends each model request to one of two accounts. A request that holds patient data goes to a HIPAA-compliant account. Everything else goes to an ordinary account. Later chapters come back to it.
 
-## Guides: principles, playbooks, and skills
+An earlier planning session had already written the spec as GitHub issue #1, with 32 sub-issues as tickets.
 
-The harness has three kinds of guides. Each guide has a trigger that says when it applies. The prompt lists every guide by name and trigger, and the agent reads a guide in full only when its trigger matches.
+## Restate before anything runs
 
-- **Principles** are hard rules for how an agent thinks and decides. There are 27, such as `fix-root-causes`, `prove-it-works`, `subtract-before-you-add`, and `explain-the-number`. A principle outranks a skill and the agent's own habits.
-- **Playbooks** are workflows, one per kind of work. There are 31, such as `bug-fix`, `feature`, `investigation`, `align`, `babysit`, and `autonomous-run`. The agent copies each playbook's steps into a `TODO.md` and checks them off, so I can see which step it skipped and why.
-- **Skills** are tools for one job. There are 55. `grilling` interviews me until a plan settles. `arena` races several candidates at one task. `interrogate` sends adversaries on several models to break a change. `unslop` strips AI tells from prose. Some skills run only when I type them, such as `/skill:handoff` and `/skill:retro`.
+The agent in my terminal is the root. It talks to me, plans, hands out the work, and reports back. I told it to build issue #1 and all its sub-issues, and to bring me the tickets that needed my input. Then I asked for one thing before any work: "gather the necessary context and restate in your own words what are we doing here."
 
-Most of this started as other people's work. The playbooks, the three roles, and the pull request format follow Lauren Tan's [pstack](https://github.com/cursor/plugins/tree/main/pstack). Several alignment skills, such as `grilling`, `to-spec`, and `to-tickets`, started as [Matt Pocock's skills](https://github.com/mattpocock/skills). Fifteen playbooks started as [Addy Osmani's agent skills](https://github.com/addyosmani/agent-skills). When I port a guide, I keep the upstream wording where I can, because the exact words shape what the agent does.
+The root read the spec, the 32 tickets, the glossary, and the state folder that the planning session left behind. A state folder is a directory at `~/.local/state/pi-agent/<project>/<work>/`. It holds the destination, my standing instructions, and the decision trail, so the work outlives any one session.
 
-## Roles: root, owner, and leaf
+The restatement exposed a wrong belief. The agent asked me for an API key to the compliant Anthropic account. I don't have one, because that account signs in through a browser login. The spec carried the same mistake, so I had it fixed first: "update the spec and the respective tickets so we are aligned on the truth." Then I asked for a fresh restatement. It matched what I wanted, and I gave the grant in one line: "Excellent, proceed with implementation, operate autonomously."
 
-- The **root** is the agent in my terminal. It talks to me, plans, delegates, integrates the results, and reports. It never pushes to a shared branch.
-- An **owner** builds, verifies, and commits one slice of the work in its own git worktree. It can start helpers of its own.
-- A **leaf** does one bounded task, such as a search, a review, or a measurement. It starts nothing.
+Until that line, the agent proposes and asks. After it, the agent works alone inside what the restatement covered. [Chapter 03](03-align.md) covers the restatement, and [chapter 04](04-delegate.md) covers grants.
 
-## The model table
+## One owner per ticket
 
-A delegate picks its model by alias, never by name.
+The root doesn't write the code. It starts delegates, other agents that each get one task and report to the agent that started them. A delegate has one of two roles.
 
-| Alias | Model | Used for |
-| --- | --- | --- |
-| `judgment` | Claude Opus 5.5 | Implementation, design, and prose |
-| `worker` | Claude Opus 5.5 | Research, scouting, verification runs, and the workers in a swarm |
-| `investigator` | GPT 6.1 | Review and audit from another vendor |
-| `fable` | Claude Fable 5.2 | One of the adversaries in `interrogate` |
-| `divergent` | GLM 5.3 Flash | The extra runner in an arena, and nothing else |
+An owner builds, verifies, and commits one slice of the work. Each ticket on phi-router got its own owner, working in its own git worktree, a separate checkout of the repo, so no two owners edit the same files.
 
-The table exists for cross-vendor review. The model that checks a pull request never comes from the family that wrote it. A checker from the writer's family risks a [common-mode failure](https://www.adelard.com/media/vfngprxq/divchap.pdf), where one shared cause makes the writer and the checker miss the same bug. A reviewer from another vendor removes that shared cause.
+A leaf does one bounded task, such as a search, a review, or a measurement, and starts nothing. Before the root filed a new ticket, a leaf gave it a cold read. The leaf read only that ticket and reported what it couldn't follow.
 
-Every model runs at high reasoning effort. [Chapter 04](04-delegate.md) explains why every delegate must name its model.
+Every delegate names its model by alias, never by name. An alias names a job, and the harness maps each alias to a model. The owners ran on `judgment`, the alias for implementation and design. The cold readers ran on `worker`, the alias for research and checks.
 
-## Owned work: delegate, serve, watch, and wait
+## A verifier from another vendor
 
-The root starts work with tools that return a handle at once:
+Each pull request got a verifier, a leaf on `investigator`. That alias maps to GPT, and the owners ran on Claude. A checker from the writer's family risks a [common-mode failure](https://www.adelard.com/media/vfngprxq/divchap.pdf), where one shared cause makes the writer and the checker miss the same bug. A reviewer from another vendor removes that shared cause.
 
-- `delegate` starts an agent on one task.
-- `serve` starts a long-running process, such as a dev server or my 1Password auto-approver.
-- `watch` starts a command that wakes the agent when it exits, such as a CI poll or a timer.
-- `wait` blocks until results arrive and returns them in its reply.
+The verifier checks the pull request at its exact head commit. A wrapper around `gh` refuses to merge unless a verifier passed that commit. When a pull request failed review twice, the root sent four adversaries on different models to break it. The root merged only after a review passed. Partway through I made merging a standing instruction: "you merge the open PRs that are ready." The root recorded it in `STATE.md`, the state folder's main file.
 
-Each job gets its own Herdr terminal, nested under the agent that started it. I can click any of them and watch it work. Jobs run in systemd user slices, so cancelling a parent stops its children too.
+In Toyota's terms the merge wrapper is [jidoka](https://global.toyota/en/company/vision-and-philosophy/production-system/). Under jidoka a machine stops itself on a defect, so one person can run many machines without watching each one. Gates like this let me run a fleet without reading every diff. [Chapter 05](05-verify.md) covers verification.
 
-## State folders
+## Decisions by number
 
-Work that outlives a turn keeps a folder at `~/.local/state/pi-agent/<project>/<work>/`. It holds the destination, my standing instructions, the decision trail, and the questions that wait on me. [Chapter 08](08-memory.md) covers it.
+The root batched its questions, and each question carried its own pick. At first it parked them in `USER_ACTION_ITEMS.md`, a file of items that wait on me. I pulled them back: "ask me the questions in chat to answer you quicker."
 
-## Gates in code
+I answer by number. "1. yes. 2. yes. 3. agree." When a question made no sense, I said so: "I don't understand this, speak clearly." The agent explained it again with a worked example. A little over two days after the grant, I answered a batch with "agree on all 7, make the repo public and release it."
 
-Some rules live in code, because agents skipped the prose version:
+## Pause, then continue
 
-- A `gh` wrapper refuses to merge a pull request unless a verifier passed its exact head commit.
-- A format check rejects a write to `USER_ACTION_ITEMS.md` that breaks the item format.
-- `STATE.md` is capped at 16 KB, because the agent reads it back whole after every compaction.
-- A machine-wide queue limits how many check runs go at once, and a recorded pass for a commit lets the next agent skip the rerun.
+The run outlived my machine. I typed "pause the work, I'm going to reboot my machine." The root cancelled its delegates, pushed the unpushed branches, and archived its files from `/tmp`. It wrote `STATE.md` and `decisions.tsv`, the decision trail, into the state folder. After the reboot I typed "continue," and it picked up where it had stopped. I paused phi-router this way three times. [Chapter 08](08-memory.md) covers the state folder.
 
-In Toyota's terms these gates are [jidoka](https://global.toyota/en/company/vision-and-philosophy/production-system/). Under jidoka a machine stops itself on a defect, so one person can run many machines without watching each one. The gates let me run a fleet without reading every diff.
+## Using it myself
 
-## Panels
+The verifiers checked correctness. After the release I installed phi-router and used it, and I found problems with the experience.
 
-Herdr shows the fleet. The Agents list nests every helper under its parent. The Skills panel shows which guides each agent loaded, in order. The Trace panel shows each playbook step and each decision with its evidence. The Actions panel shows what waits on me. The status bar shows what the session has spent.
+- The installer was a wall of text. "The experience is awful."
+- Setup demanded two accounts up front. A second subscription helps, but it is not the default path.
+- Setup cloned the repo into my home folder. "That is disgusting."
+- The README stopped letting me copy its prompt block.
+- Setup accepted only an Anthropic key, when any compliant account should work. "That is a regression."
 
-## Keep it lean, still
+Each problem went back through the loop this chapter describes. For the installer I asked for an arena, where four designers on models from different vendors each proposed a design and a judge ranked them. I added "Propose the changes. Don't implement yet." For setup I asked: "Restate in your own words what would be a better UX." The setup redesign that followed had its own spec, a prototype I opened in my browser, an owner per phase, and a verifier at each pull request.
 
-The old manual warned that every MCP server and skill bloats the prompt. That is still true, but the answer changed. Guides load by trigger, so 55 skills cost one line each until one applies. I also measure which guides load and cut the ones that never do, as [chapter 09](09-fix-the-system.md) describes.
+My part of the run was the restatement, the grant, the numbered answers, the pauses, and using the product. The agents did the rest.
