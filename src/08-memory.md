@@ -11,7 +11,7 @@ Each piece of work keeps a folder at `~/.local/state/pi-agent/<project>/<work>/`
 | `STATE.md` | The destination, my standing instructions in my words, the decisions in force, the status, and the next step. |
 | `facts.md` | Project facts every delegate needs, such as commands, conventions, and hazards. |
 | `owner.md` | Rules only owners follow, such as how a slice ships. |
-| `TODO.md` | The steps of each playbook the root runs, checked off or skipped with a reason. |
+| `TODO.md` | The steps of the playbook, the harness's written workflow for this kind of work, each checked off or skipped with a reason. |
 | `decisions.tsv` | The decision trail, one row per decision with its reason, evidence, and result. |
 | `USER_ACTION_ITEMS.md` | What waits on me. |
 
@@ -35,7 +35,7 @@ The old session must stop. After one handoff, the old session kept posting its p
 
 ## Compaction drops the rules
 
-Compaction keeps the task and loses the guides. In two long sessions I had to say the same thing four times: "Again you have no principles or skills in your context, read them again." Each reload found real slips that had happened without the rules: merges on a verdict without reading the diff, numbers reported without an explanation, and searches skipped.
+Compaction keeps the task and loses the guides, the skills and principles the agent had loaded for it. In two long sessions I had to say the same thing four times: "Again you have no principles or skills in your context, read them again." Each reload found real slips that had happened without the rules: merges on a verdict without reading the diff, numbers reported without an explanation, and searches skipped.
 
 The root's first answer, a note at the top of `STATE.md`, didn't work. Then the root wrote a script that blocked merges until the rules were reloaded. Now the harness writes its own compaction summary, and the summary lists the guides that were in context so the agent reloads them. [Chapter 09](09-fix-the-system.md) covers why a fix in code beats a note.
 

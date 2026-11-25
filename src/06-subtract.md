@@ -8,7 +8,7 @@ Agents add. Ask for a fix, and you get the fix plus a helper, a fallback, and a 
 
 ## What adding looks like
 
-The clearest case came from my own harness. The owned work tool is how the root starts delegates and background jobs and gets their results back, as [the harness appendix](appendix-harness.md#owned-work) describes. One agent set out to redesign it to fix a problem that a few lines of instructions would solve. "Why are we reengineering the owned work tool? Isn't this more related to instructions?" The agent agreed, and the pull request shrank to five lines.
+The clearest case came from my own harness. One agent set out to redesign the owned work tool, the part that starts delegates and background jobs, to fix a problem that a few lines of instructions would solve. "Why are we reengineering the owned work tool? Isn't this more related to instructions?" The agent agreed, and the pull request shrank to five lines.
 
 The same habit showed up across two weeks of sessions:
 
@@ -29,7 +29,7 @@ I ask two questions of every agent pull request. "How much time does it save? Is
 
 An agent asked to make something robust will find edge cases forever. "Think of this issue as Zeno's Paradox." Each step looks like progress, and the work never finishes.
 
-Now a finding counts only when it has a path a real user takes, and the line in the code that proves it. Everything else is a known limit, named once and left alone. Agents also stopped filing a ticket for every edge case. One night an agent filed seven issues for findings nobody needed. I closed them as not planned.
+Now a finding counts only when it has a path a real user takes, and the line in the code that proves it. Everything else is a known limit, named once and left alone. Agents also stopped filing a ticket for every edge case, after the night of the seven needless issues in [chapter 04](04-delegate.md#steering-a-running-fleet).
 
 ## Fewer, self-contained pull requests
 

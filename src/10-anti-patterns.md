@@ -10,13 +10,13 @@ Earlier chapters already tell the most common ones, such as reading a question a
 
 **Escalating what is already decided.** An agent wanted to rotate a password I had already judged safe, after I had told it to drop the matter. Raise a risk once, with evidence, and then respect the decision.
 
-**Locking the human out.** A safety control in phi-router stopped me from switching models in my own session. "If I choose to break the seal, that is something I choose." A control that guards against agents must not overrule the human.
+**Locking the human out.** A safety control in phi-router sealed my session to its current model, and it blocked me when I tried to switch. "If I choose to break the seal, that is something I choose." A control that guards against agents must not overrule the human.
 
-**Asking what it could find out.** One agent asked me for a credential that sat in our AWS secrets. Another asked me about a meeting on a user's workload, when the transcript sat in its evidence folder. "It is transcribed and in your evidence already."
+**Asking what it could find out.** One agent asked me for a credential that sat in our AWS secrets. Another asked me questions that a meeting about a user's workload had already answered, and the transcript sat in its evidence folder. "It is transcribed and in your evidence already."
 
 **Caution that kills the value.** The first version of phi-router sent so many requests to the compliant account that it cut costs by only 18%. The target was 80% or more. A fail-closed default is right only when it leaves the product useful.
 
-**Heartbeats with nothing in them.** One agent posted a "nothing changed" report every few hours until I said "stop the heartbeat." On another run I slowed the heartbeat to once every five hours. Report when something changes.
+**Heartbeats with nothing in them.** One agent posted a "nothing changed" report every few hours until I said "stop the heartbeat." On another run a heartbeat checked in every ten minutes, and I slowed it to once every five hours. Report when something changes, and keep any routine check rare.
 
 **Idling in a self-made wait.** An agent gave itself a ten-minute hold before a merge and sat in it. "What are you waiting for?"
 
@@ -26,7 +26,7 @@ Earlier chapters already tell the most common ones, such as reading a question a
 
 ## My anti-patterns
 
-**Bulk approval without reading.** I answered "agree on all six picks" out of [automation bias](https://en.wikipedia.org/wiki/Automation_bias), the habit of trusting what an automated system proposes without checking it, and those picks filed issues I closed as noise the same night. A one-line "agree" is a review, so I read the picks before I type it.
+**Bulk approval without reading.** I answered "agree on all six picks" out of [automation bias](https://en.wikipedia.org/wiki/Automation_bias), the habit of trusting what an automated system proposes without checking it, and those picks led to the seven needless issues in [chapter 04](04-delegate.md#steering-a-running-fleet). A one-line "agree" is a review, so I read the picks before I type it.
 
 **The acceptance spiral, at fleet scale.** With one agent, the risk is accepting one diff after another until you are a passenger. With a fleet, the spiral is approving plans, merges, and messages faster than I understand them. [Chapter 05](05-verify.md) describes what I review now. I still don't approve what I don't understand.
 

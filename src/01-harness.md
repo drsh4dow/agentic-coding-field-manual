@@ -16,9 +16,7 @@ The root read the spec, the 32 tickets, the glossary, and the state folder that 
 
 The restatement exposed a wrong belief. The agent asked me for an API key to the compliant Anthropic account. I don't have one, because that account signs in through a browser login. The spec carried the same mistake, so I had it fixed first: "update the spec and the respective tickets so we are aligned on the truth." Then I asked for a fresh restatement. It matched what I wanted, and I gave the grant in one line: "Excellent, proceed with implementation, operate autonomously."
 
-Until that line, the agent proposes and asks. After it, the agent works alone inside what the restatement covered.
-
-Restating has its own skill in my harness, `in-your-own-words`. A skill is one of three kinds of guides, instructions an agent reads only when a task matches the guide's trigger. The other two are principles and playbooks. Principles are hard rules for how an agent decides, and playbooks are step lists for one kind of work.
+Until that line, the agent proposes and asks. After it, the agent works alone inside what the restatement covered. Restating has its own skill in my harness, `in-your-own-words`, a guide the agent loads when the task matches.
 
 ## One owner per ticket
 
@@ -52,4 +50,4 @@ The verifiers checked correctness. After the release I installed phi-router and 
 
 Each problem went back through the loop this chapter describes. For the installer I asked for an arena, where four designers on models from different vendors each proposed a design and a judge ranked them. I added "Propose the changes. Don't implement yet." For setup I asked: "Restate in your own words what would be a better UX." The setup redesign that followed had its own spec, a prototype I opened in my browser, an owner per phase, and a verifier at each pull request.
 
-My part of the run was the restatement, the grant, the numbered answers, three pauses to reboot my machine, and using the product. The agents did the rest.
+My part of the run was the restatement, the grant, the numbered answers, three pauses to reboot my machine, and using the product. At each pause the root saved the run to its state folder and picked it up after the reboot, as [chapter 08](08-memory.md#pause-and-resume) describes. The agents did the rest.
