@@ -42,4 +42,4 @@ The rest:
 
 ## What replaced the three-attempt rule
 
-The old manual said to write the code yourself after three failed attempts. Now the rule is about the premise. When two fixes that rest on the same belief both fail, the belief is wrong. The agent stops patching and questions the premise, the design, or the requirement. In one review, the agent stopped after its second failed patch and redesigned the change.
+The old manual said to write the code yourself after three failed attempts. Now the rule is about the premise. When two fixes that rest on the same belief both fail, the belief becomes the suspect. The agent rechecks the premise, the design, and the requirement before it tries a third patch. In one review, the agent stopped after its second failed patch and redesigned the change.
