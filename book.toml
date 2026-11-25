@@ -1,6 +1,6 @@
 [book]
 title = "Agentic Coding Field Manual"
-description = "A practical, opinionated manual for using AI coding agents with production-grade engineering discipline."
+description = "A practical, opinionated manual for running a fleet of coding agents without shipping slop."
 authors = ["Daniel Moretti"]
 language = "en"
 src = "src"
