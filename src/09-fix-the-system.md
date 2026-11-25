@@ -38,7 +38,7 @@ Each retro ends in pull requests to the harness, not in a list of lessons. My ru
 
 ## Prompts are code
 
-System prompt changes go through the same process as code: a pull request, a short eval on the behavior the change targets, and a review. When I port a guide from upstream, I keep the wording, because the exact words shape what the agent does. I tune only the trigger and the description.
+System prompt changes go through the same process as code: a pull request, a short eval on the behavior the change targets, and a review. Guides are the instruction files, such as skills, that an agent loads when a task matches their trigger. When I port one from upstream, I keep the wording, because the exact words shape what the agent does. I tune only the trigger and the description.
 
 ## Measure what loads
 

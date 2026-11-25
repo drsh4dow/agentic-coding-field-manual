@@ -52,7 +52,7 @@ Agents over-verify as readily as they under-verify. On phi-router the extra proo
 
 Partway through the build I asked "Why is this taking so long?" The agent looked at its own run and admitted three to five review rounds on every pull request, quality bars set higher than the tickets asked for, and tickets sitting idle. It narrowed the rule for what blocks a merge, sent adversaries only after a second failed review, and started every ticket that nothing blocked.
 
-The next day the run went too far again. I had asked for copy changes and adjustments to the terminal UI, and every check still ran the formal models. I paused the work and wrote: "We are overcomplicating things. Only verify the things we are improving, basically the UX. I don't care about formal proof of everything. Don't hog my CPU." The agent dropped to one light review per pull request, with at most two agents at a time. It let CI be the gate and cut three follow-ups that were not UX work.
+The next day the run went too far again. I had asked for copy changes and adjustments to the terminal UI, and every check still ran the formal models. I paused the work and wrote: "We are overcomplicating things. Only verify the things we are improving, basically the UX. I don't care about formal proof of everything. Don't hog my CPU." The agent dropped to one light review per pull request, with at most two agents at a time. It let CI be the gate and cut three follow-ups that were not UX work. Even this light setting kept two things. The merge wrapper still required a verifier's verdict on the latest commit, and CI still had to pass.
 
 Shorter corrections said the same thing:
 
@@ -69,7 +69,7 @@ Both directions are true at once. In the same week I said "without skipping veri
 When a colleague asks me for a review, the agent does the legwork and I make the call:
 
 1. I ask for a binary verdict and name my worry: "Check if we need changes or approve. I'm concerned about hardcoding a value there."
-2. The agent runs the change on staging with the project's verification skill, and it runs interrogate when the change is risky.
+2. The agent runs the change on staging with the project's verification skill, and it runs an [interrogation](04-delegate.md#swarms-arenas-and-adversaries) when the change is risky.
 3. It brings back the verdict in plain words: "should we request changes or approve? Be clear."
 4. It drafts the review comment. I post it, or I tell it to.
 
