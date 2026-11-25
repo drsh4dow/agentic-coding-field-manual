@@ -12,8 +12,8 @@ Engineers who already ship with coding agents and now run more than one at a tim
 
 | Chapter | Description |
 | --- | --- |
-| [Introduction](src/00-intro.md) | Why the old "you drive, AI types" model broke, and the one that replaced it. |
-| [The harness](src/01-harness.md) | Principles, playbooks, skills, roles, the model table, and the gates the rest of the manual assumes. |
+| [Introduction](src/00-intro.md) | Why "you drive, AI types" stopped working at fleet scale, and what replaced it. |
+| [The harness at work](src/01-harness.md) | One real run, the phi-router build, from restatement to release, with each part of the setup met as the story needs it. |
 | [The repo agents work in](src/02-the-repo.md) | Glossary, standards, ADRs, AGENTS.md, strict tooling, fast checks, and tests that test something. |
 | [Align before autonomy](src/03-align.md) | Openers, a measurable definition of done, and decisions as numbered calls with a pick. |
 | [Delegate the work](src/04-delegate.md) | Slicing work across owners and leaves, grants, swarms, arenas, and steering a running fleet. |
@@ -24,6 +24,7 @@ Engineers who already ship with coding agents and now run more than one at a tim
 | [Fix the system, not the output](src/09-fix-the-system.md) | Turning a repeated correction into a check, a type, or a gate. |
 | [Anti-patterns](src/10-anti-patterns.md) | The failures I corrected most, from agents and from myself. |
 | [Appendix: the manifesto, clause by clause](src/appendix-manifesto.md) | Each manifesto resolution mapped to the practice that serves it. |
+| [Appendix: the harness, for reference](src/appendix-harness.md) | Guides, the model table, tools, gates, panels, and credits. |
 
 ## Read online
 
