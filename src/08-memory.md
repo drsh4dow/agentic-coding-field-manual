@@ -15,7 +15,7 @@ Each piece of work keeps a folder at `~/.local/state/pi-agent/<project>/<work>/`
 | `decisions.tsv` | The decision trail, one row per decision with its reason, evidence, and result. |
 | `USER_ACTION_ITEMS.md` | What waits on me. |
 
-`STATE.md` is capped at 16 KB, because the root reads it back whole after every compaction. Dated history goes to the decision trail. One project's `STATE.md` grew to 125 KB before the cap existed. The rewrite cut it to 11 KB.
+`STATE.md` is capped at 16 KB, because the root reads it back whole after every compaction. Dated history goes to the decision trail. One project's `STATE.md` grew to 125 KB before the cap existed. Once the cap landed, the root on that project rewrote the file down to 11 KB.
 
 ## Standing instructions survive in my words
 
@@ -37,7 +37,7 @@ The old session must stop. After one handoff, the old session kept posting its p
 
 Compaction keeps the task and loses the guides. In two long sessions I had to say the same thing four times: "Again you have no principles or skills in your context, read them again." Each reload found real slips that had happened without the rules: merges on a verdict without reading the diff, numbers reported without an explanation, and searches skipped.
 
-The root first answered with a note at the top of `STATE.md`. That didn't work. Then the root wrote a script that blocked merges until the rules were reloaded. Now the harness writes its own compaction summary, and the summary lists the guides that were in context so the agent reloads them. [Chapter 09](09-fix-the-system.md) covers why a fix in code beats a note.
+The root's first answer, a note at the top of `STATE.md`, didn't work. Then the root wrote a script that blocked merges until the rules were reloaded. Now the harness writes its own compaction summary, and the summary lists the guides that were in context so the agent reloads them. [Chapter 09](09-fix-the-system.md) covers why a fix in code beats a note.
 
 ## The decision trail
 

@@ -24,8 +24,8 @@ Steps 1 and 2 make the mistake impossible, so no agent has to remember to avoid 
 | --- | --- |
 | Agents wrote action items in any format they liked | A format check rejects a write that breaks the item format |
 | Delegates inherited the root's expensive model | A delegate must name a model from the table |
-| Agents merged without an independent review | A `gh` wrapper refuses a merge without a verdict at the head |
-| Agents reran every check after every small edit | One full check per pushed head, and agents share the recorded pass |
+| Agents merged without an independent review | A `gh` wrapper refuses a merge without a verdict on the latest commit |
+| Agents reran every check after every small edit | One full check on each commit an agent pushes, and agents share the recorded pass |
 | Agents ran `sleep` loops to wait for jobs | A `wait` tool that returns results in its reply |
 | Agents said a skill didn't exist when it was hidden from the list | `/skill:<name>` finds any skill on disk |
 | Runs ended unpredictably, with one pull request, six, or none and the work left in a worktree | Every run ends in one handoff pull request |
@@ -33,7 +33,7 @@ Steps 1 and 2 make the mistake impossible, so no agent has to remember to avoid 
 
 ## Retros
 
-After a run that went wrong, I run `/skill:retro`, a [blameless postmortem](https://sre.google/sre-book/postmortem-culture/) that asks what let the mistake through, not who made it. The agent reads the transcript and finds where each mistake came from. I bring hypotheses for it to test, and I say why I ask: "I'm not judging, I'm trying to understand where it comes from so we can avoid it in new sessions."
+After a run that went wrong, I run `/skill:retro`, a [blameless postmortem](https://sre.google/sre-book/postmortem-culture/). The agent reads the transcript and finds where each mistake came from. I bring hypotheses for it to test, and I say why I ask: "I'm not judging, I'm trying to understand where it comes from so we can avoid it in new sessions."
 
 Each retro ends in pull requests to the harness, not in a list of lessons. A lesson nobody encodes is gone by the next compaction.
 

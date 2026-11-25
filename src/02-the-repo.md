@@ -36,7 +36,7 @@ Wrap linting, formatting, and type checking in one command that agents run befor
 
 What changed is the cost of a slow check. With six owners, a ten-minute check runs six times on one machine. I asked the same question in three repos within two weeks: "how long does the check take? What can we do to cut that number down to the minimum?" The answers were the same each time:
 
-- Run the full check once per pushed head, not after every edit.
+- Run the full check once on each commit an agent pushes, not after every edit.
 - Run independent checks in parallel.
 - Move slow proofs, such as formal models and evals, out of the routine check. They run as a final gate on the change they cover.
 - Share check results across agents, so two agents never check the same commit twice.
