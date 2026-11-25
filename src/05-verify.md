@@ -4,7 +4,7 @@
 >
 > [No AI Slop manifesto](https://www.slopmanifesto.com/), resolution 9
 
-A common rule is to read every diff before you commit. I kept it when I ran one agent. At fleet scale I can't, and pretending I do would be its own kind of slop. My rule now has two halves. A change works only when a run on the real system shows it. The amount of proof matches what a mistake would cost.
+When I ran one agent, I read every diff before I committed it. At fleet scale I can't, and pretending I do would be its own kind of slop. My rule now has two halves. A change works only when a run on the real system shows it. The amount of proof matches what a mistake would cost.
 
 ## Proof means a run on the real system
 

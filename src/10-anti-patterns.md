@@ -34,4 +34,4 @@ Earlier chapters already tell the most common ones, such as reading a question a
 
 ## After two failed fixes, check the premise
 
-A common rule is to write the code yourself after three failed attempts. I stopped counting attempts and started checking the belief behind them. When two fixes that rest on the same belief both fail, the belief becomes the suspect. The agent rechecks the premise, the design, and the requirement before it tries a third patch. In one review, the agent stopped after its second failed patch and redesigned the change.
+My old rule for one agent was to write the code myself after three failed attempts. Now I check the belief behind the attempts instead of counting them. When two fixes that rest on the same belief both fail, the belief becomes the suspect. The agent rechecks the premise, the design, and the requirement before it tries a third patch. In one review, the agent stopped after its second failed patch and redesigned the change.
