@@ -13,11 +13,11 @@ A typical run in my sessions goes like this:
 1. The root aligns with me, as in [chapter 03](03-align.md).
 2. The root sends read-only scouts to research, often one per area.
 3. The root cuts the work into slices by what depends on what, not by the order features go live.
-4. One owner per slice builds in its own git worktree, on the `judgment` model.
+4. One owner per slice builds in its own git worktree, on Claude.
 5. A verifier from another vendor checks each pull request at its exact head commit.
 6. The root merges what passed, deploys when I granted it, and uses the result on the real system.
-7. After each batch of slices, a cut pass deletes what the batch did not need. See [chapter 06](06-subtract.md).
-8. I get one handoff pull request, or as few as the work allows.
+7. After each batch of slices, a separate owner runs a cut pass. It deletes code the batch did not need and keeps behavior the same. See [chapter 06](06-subtract.md).
+8. I get one handoff pull request, or as few as the work allows. It carries the root's work branch, with every merged slice, to the main branch for my review.
 
 ## Size the work to a session, not a calendar
 
@@ -27,9 +27,11 @@ Dates hurt agent work, because agents underestimate their own speed. One agent m
 
 ## Grants are explicit and end with the session
 
-An agent works alone only when I say so, in words, in that session. In this grant, the 2.5 hours are the time a person spends each week on a manual task, measured in production:
+An agent works alone only when I say so, in words, in that session. One grant read:
 
 > Operate autonomously, work end to end. The DoD is the 2.5-hour target. Don't stop until that is reached.
+
+The 2.5 hours were the time a person spent each week on a manual task, measured in production.
 
 A grant names what it covers. In two weeks my grants included opening pull requests without asking, merging once a verifier passed, writing to production, and running an infrastructure apply. A grant written in an old handoff note is history. A new session needs my word again.
 
@@ -51,7 +53,7 @@ Three patterns cover most fan-out:
 
 - A **swarm** splits one job into slices, gives each slice to a leaf, and merges the reports. This manual came from one. Ten leaves read 84 sessions, one leaf mapped the harness, and the root merged the eleven reports.
 - An **arena** races several candidates on one brief, has a judge from another vendor rank them, and combines the best parts into one result. I use it for designs where a single attempt could settle on the wrong shape.
-- **Interrogate** sends adversaries on several models to break a change. A finding counts only if they prove it with a run. It runs after a second failed review of the same pull request, not on every change.
+- An **interrogation** sends adversaries on several models to break a change. A finding counts only if they prove it with a run. It runs after a second failed review of the same pull request, not on every change.
 
 ## Respect the model table
 

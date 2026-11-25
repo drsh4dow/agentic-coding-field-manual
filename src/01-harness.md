@@ -12,13 +12,13 @@ An earlier planning session had already written the spec as GitHub issue #1, wit
 
 The agent in my terminal is the root. It talks to me, plans, hands out the work, and reports back. I told it to build issue #1 and all its sub-issues, and to bring me the tickets that needed my input. Then I asked for one thing before any work: "gather the necessary context and restate in your own words what are we doing here."
 
-Restating has its own skill in my harness, `in-your-own-words`. A skill is one of three kinds of guides, instructions an agent reads only when its trigger matches the task. The other two are principles, hard rules for how an agent decides, and playbooks, step lists for one kind of work.
-
 The root read the spec, the 32 tickets, the glossary, and the state folder that the planning session left behind. A state folder is a directory at `~/.local/state/pi-agent/<project>/<work>/`. It holds the destination, my standing instructions, and the decision trail, so the work outlives any one session.
 
 The restatement exposed a wrong belief. The agent asked me for an API key to the compliant Anthropic account. I don't have one, because that account signs in through a browser login. The spec carried the same mistake, so I had it fixed first: "update the spec and the respective tickets so we are aligned on the truth." Then I asked for a fresh restatement. It matched what I wanted, and I gave the grant in one line: "Excellent, proceed with implementation, operate autonomously."
 
 Until that line, the agent proposes and asks. After it, the agent works alone inside what the restatement covered.
+
+Restating has its own skill in my harness, `in-your-own-words`. A skill is one of three kinds of guides, instructions an agent reads only when a task matches the guide's trigger. The other two are principles and playbooks. Principles are hard rules for how an agent decides, and playbooks are step lists for one kind of work.
 
 ## One owner per ticket
 
@@ -40,10 +40,6 @@ The root batched its questions, and each question carried its own pick. At first
 
 I answer by number. "1. yes. 2. yes. 3. agree." When a question made no sense, I said so: "I don't understand this, speak clearly." The agent explained it again with a worked example. A little over two days after the grant, I answered a batch with "agree on all 7, make the repo public and release it."
 
-## Pause, then continue
-
-The run outlived my machine. I typed "pause the work, I'm going to reboot my machine." The root cancelled its delegates, pushed the unpushed branches, and archived its files from `/tmp`. It wrote `STATE.md` and `decisions.tsv`, the decision trail, into the state folder. After the reboot I typed "continue," and it picked up where it had stopped. I paused phi-router this way three times.
-
 ## Using it myself
 
 The verifiers checked correctness. After the release I installed phi-router and used it, and I found problems with the experience.
@@ -56,4 +52,4 @@ The verifiers checked correctness. After the release I installed phi-router and 
 
 Each problem went back through the loop this chapter describes. For the installer I asked for an arena, where four designers on models from different vendors each proposed a design and a judge ranked them. I added "Propose the changes. Don't implement yet." For setup I asked: "Restate in your own words what would be a better UX." The setup redesign that followed had its own spec, a prototype I opened in my browser, an owner per phase, and a verifier at each pull request.
 
-My part of the run was the restatement, the grant, the numbered answers, the pauses, and using the product. The agents did the rest.
+My part of the run was the restatement, the grant, the numbered answers, three pauses to reboot my machine, and using the product. The agents did the rest.

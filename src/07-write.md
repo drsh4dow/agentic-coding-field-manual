@@ -54,7 +54,7 @@ A pull request body has six headings: Why, What changed, Scope, Tradeoffs, Blast
 
 A status update to a project's stakeholders follows four rules, each from a correction:
 
-- State facts, without names or dependencies on named people.
+- State facts, and name no person as the thing a task waits on.
 - Measure pace from what shipped, not from projected dates.
 - Include only what readers need. "They don't want to read, so make it so it only contains the essentials and the others can be discovered."
 - Make it readable without the project's history.

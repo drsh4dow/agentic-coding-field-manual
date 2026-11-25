@@ -1,6 +1,6 @@
 # Sessions end, work doesn't
 
-A common rule is to never compact, and to start a fresh session instead. That rule fits sessions of an hour. I stopped following it because my runs now last days. They survive reboots, harness upgrades, and many compactions. The work lives on disk, not in the context window.
+I used to avoid compaction and start a fresh session instead. That habit fits sessions of an hour, but my runs now last days. They survive reboots, harness upgrades, and many compactions. The work lives on disk, not in the context window.
 
 ## The state folder
 
@@ -23,7 +23,7 @@ Instructions I gave once got lost in later sessions. "Use the auto-approver" and
 
 ## Pause and resume
 
-"Pause the work, I'm going to reboot" is a normal message. The root cancels its delegates, pushes unpushed branches, and writes a resume note. Background jobs such as watches and the auto-approver die with the machine, so the note lists which ones to start again. After the reboot, "continue" picks the work up, and the root asks before it restarts the jobs.
+"Pause the work, I'm going to reboot" is a normal message. The root cancels its delegates, pushes unpushed branches, and archives its files from `/tmp`. It writes `STATE.md`, the decision trail, and a resume note into the state folder. Background jobs such as watches and the auto-approver die with the machine, so the note lists which ones to start again. After the reboot, "continue" picks the work up, and the root asks before it restarts the jobs. I paused phi-router this way three times.
 
 ## Handoff to a fresh session
 
