@@ -14,9 +14,26 @@ Many of my corrections in two weeks were about writing, not code. Agents write s
 
 ## What I correct most
 
-**Assumed context.** This is the most common failure by far. An agent spends hours inside a task and starts writing as if I had been there. "Nobody but you understands what step 1 is. Talk with context and make this self-contained." "Stop talking like I have the same context as you." The agent invents terms, such as "wave 1," "base defect," or "signs the case off," and uses them as if they were common words. The fix is plain words or a glossary entry, never a private term.
+**Assumed context.** This is the most common failure by far. An agent spends hours inside a task and starts writing as if I had been there. On the production automation, an agent wrote a project update around "step 1" and the steps after it, and nobody outside its session knew what those steps were. "Nobody but you understands what step 1 is. Talk with context and make this self-contained." Later that day another reply sent me to a file by its path, as if I knew where that was. "Stop talking like I have the same context as you." I told it to open the files for me and to put outgoing messages in a text file I could read and edit.
 
-**Length.** On one Slack draft I asked for a shorter version three times in a row. The third time I added "humans don't talk like that."
+The agent also invents terms, such as "wave 1," "base defect," or "signs the case off," and uses them as if they were common words. Here is an illustration I built from this book's own terms, not a quote from a session. A status line like this one reads fine to the agent that wrote it:
+
+```text
+Wave 1 green except S3, gate bounced it on a stale verdict. Rerunning.
+```
+
+The rewrite I would accept names each thing in plain words:
+
+```text
+Two of the three pull requests in the first batch have merged. The third
+has to wait, because I pushed a commit after the verifier passed it, and
+the merge wrapper accepts only a verdict on the latest commit. The verifier
+is running again, and nothing waits on you.
+```
+
+The fix is plain words or a glossary entry, never a private term.
+
+**Length.** On one Slack draft I asked for a shorter version three times in a row, and the third time I added "humans don't talk like that."
 
 **Machine rhythm.** "The first paragraph and the second one feel too symmetric, not like something a human would write." Balanced paragraphs, lists of three, and a summary line at the end mark the text as generated.
 
