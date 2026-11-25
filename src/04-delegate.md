@@ -71,4 +71,4 @@ A question from me is not an order. Once I asked "what about the seven open issu
 
 ## Keep the hard writing at the root
 
-Some work doesn't delegate well. Prose that needs the whole context of the run, such as a system prompt rewrite or a design decision, stays with the root. "As this is prose that requires deep knowledge, I want you to write them, not delegates." A delegate sees only its brief, and the root has the whole conversation.
+Some work doesn't delegate well. Prose that needs the whole context of the run, such as a system prompt rewrite or a design decision, stays with the root. A delegate sees only its brief, and the root has the whole conversation.

@@ -14,7 +14,6 @@ The same habit showed up across two weeks of sessions:
 
 - A pull request with a diff over 20,000 lines. "Is it truly needed? I seriously doubt it."
 - A plugin that shipped minified bundle files to the main branch. I moved the bundle off main and turned off minification.
-- A pull request that shrank to three lines once I asked what it was for.
 
 ## Net negative is the target
 

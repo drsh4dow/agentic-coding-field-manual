@@ -23,7 +23,7 @@ A cross-vendor review also runs over the decision trail. In one run it caught th
 
 ## Root cause or nothing
 
-When I review a fix, mine or a colleague's, my first question is whether it fixes the cause or patches a symptom. "My main question here is if we are handling the root cause or patching here."
+When I review a fix, mine or a colleague's, my first question is whether it fixes the cause or patches a symptom.
 
 Agents state causes with more confidence than they have. One blamed a failure on memory and wrote a change to raise the heap. I asked: "Are you 1000% sure this is due to an OOM? And not something else?" The agent admitted about 75% confidence. It measured before it opened the pull request.
 
@@ -52,7 +52,7 @@ Agents over-verify as readily as they under-verify. On phi-router the extra proo
 
 Partway through the build I asked "Why is this taking so long?" The agent looked at its own run and admitted three to five review rounds on every pull request, quality bars set higher than the tickets asked for, and tickets sitting idle. It narrowed the rule for what blocks a merge, sent adversaries only after a second failed review, and started every ticket that nothing blocked.
 
-The next day the run went too far again. I had asked for copy changes and adjustments to the terminal UI, and every check still ran the formal models. I paused the work and wrote: "We are overcomplicating things. Only verify the things we are improving, basically the UX. I don't care about formal proof of everything. Don't hog my CPU." The agent dropped to one light review per pull request with at most two agents at a time, let CI be the gate, and cut three follow-ups that were not UX work.
+The next day the run went too far again. I had asked for copy changes and adjustments to the terminal UI, and every check still ran the formal models. I paused the work and wrote: "We are overcomplicating things. Only verify the things we are improving, basically the UX. I don't care about formal proof of everything. Don't hog my CPU." The agent dropped to one light review per pull request, with at most two agents at a time. It let CI be the gate and cut three follow-ups that were not UX work.
 
 Shorter corrections said the same thing:
 

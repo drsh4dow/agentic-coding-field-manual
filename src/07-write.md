@@ -10,16 +10,16 @@ Many of my corrections in two weeks were about writing, not code. Agents write s
 
 **Humans** get short, plain, self-contained text. A human reader has none of the agent's context and little time.
 
-**Agents** get dense text, in `AGENTS.md`, prompts, and briefs alike. "Words should be dense, carrying as much meaning as possible." An agent reads every word, and a dead word in a prompt costs on every run. I treat the system prompt as code, not prose: "the system prompt is the agent infrastructure, so I consider it the most critical piece of code."
+**Agents** get dense text, in `AGENTS.md`, prompts, and briefs alike. An agent reads every word, and a dead word in a prompt costs on every run. I treat the system prompt as code, not prose: "the system prompt is the agent infrastructure, so I consider it the most critical piece of code."
 
 ## What I correct most
 
 **Assumed context.** This is the most common failure by far. An agent spends hours inside a task and starts writing as if I had been there. On the production automation, an agent wrote a project update around "step 1" and the steps after it, and nobody outside its session knew what those steps were. "Nobody but you understands what step 1 is. Talk with context and make this self-contained." Later that day another reply sent me to a file by its path, as if I knew where that was. "Stop talking like I have the same context as you." I told it to open the files for me and to put outgoing messages in a text file I could read and edit.
 
-The agent also invents terms, such as "wave 1," "base defect," or "signs the case off," and uses them as if they were common words. Here is an illustration I built from this book's own terms, not a quote from a session. A status line like this one reads fine to the agent that wrote it:
+The agent also invents terms, such as "wave 1," "base defect," or "signs the case off," and uses them as if they were common words. This example is constructed, not quoted. A status line like this one reads fine to the agent that wrote it:
 
 ```text
-Wave 1 green except S3, gate bounced it on a stale verdict. Rerunning.
+Wave 1 green except PR 3, gate bounced it on a stale verdict. Rerunning.
 ```
 
 The rewrite I would accept names each thing in plain words:
@@ -48,7 +48,7 @@ The fix is plain words or a glossary entry, never a private term.
 
 ## Pull requests are one-minute briefings
 
-A pull request body has six headings: Why, What changed, Scope, Tradeoffs, Blast Radius, and Verification. It stays under 40 lines. It links logs instead of pasting them. It describes the change as it stands, not the story of how agents produced it. "The PR should be a short read brief." The code is the content. The body tells a reviewer where to look and why to trust it.
+A pull request body has six headings: Why, What changed, Scope, Tradeoffs, Blast Radius, and Verification. It stays under 40 lines. It links logs instead of pasting them. It describes the change as it stands, not the story of how agents produced it. The code is the content. The body tells a reviewer where to look and why to trust it.
 
 ## Status updates
 
