@@ -4,7 +4,7 @@
 >
 > [No AI Slop manifesto](https://www.slopmanifesto.com/), resolution 12
 
-Correcting an agent fixes one output, and the next session makes the same mistake. The manifesto puts "improving the system over patching the output" among its five values. I run dozens of sessions a week. A correction in chat reaches one session. A fix in the harness reaches all of them.
+Correcting an agent fixes one output, and the next session makes the same mistake. The manifesto puts "improving the system over patching the output" among its five values. I run dozens of sessions a week, so a correction in chat reaches one of them while a fix in the harness reaches all of them.
 
 ## Twice means structure
 
@@ -20,22 +20,21 @@ Steps 1 and 2 make the mistake impossible, so no agent has to remember to avoid 
 
 ## Two weeks of fixes
 
+The `wait` tool shows why the order matters. Agents waited for their jobs with `sleep`. One night I sent an agent a screenshot of my process list and asked "what are all those processes running?" They were twelve `sleep` alarms it had set for itself. The first fix, a step 3 check, was a pull request that refused `sleep` calls. I worried that agents would then burn CPU in a loop to fake a sleep, so the agent rebuilt the pull request as a step 1 change. The new `wait` tool blocks until results arrive and returns them in its reply, and with nothing left to sleep for, no agent has to remember the rule.
+
+Three more from the same two weeks:
+
 | Repeated mistake | Fix |
 | --- | --- |
 | Agents wrote action items in any format they liked | A format check rejects a write that breaks the item format |
-| Delegates inherited the root's expensive model | A delegate must name a model from the table |
 | Agents merged without an independent review | A `gh` wrapper refuses a merge without a verdict on the latest commit |
-| Agents reran every check after every small edit | One full check on each commit an agent pushes, and agents share the recorded pass |
-| Agents ran `sleep` loops to wait for jobs | A `wait` tool that returns results in its reply |
 | Agents said a skill didn't exist when it was hidden from the list | `/skill:<name>` finds any skill on disk |
-| Runs ended unpredictably, with one pull request, six, or none and the work left in a worktree | Every run ends in one handoff pull request |
-| Agents filed a ticket for every edge case | A finding counts only with a user path and the line that proves it |
 
 ## Retros
 
-After a run that went wrong, I run `/skill:retro`, a [blameless postmortem](https://sre.google/sre-book/postmortem-culture/). The agent reads the transcript and finds where each mistake came from. I bring hypotheses for it to test, and I say why I ask: "I'm not judging, I'm trying to understand where it comes from so we can avoid it in new sessions."
+After a run that went wrong, I run `/skill:retro`, a [blameless postmortem](https://sre.google/sre-book/postmortem-culture/) that asks what let the mistake through, not who made it. The agent reads the transcript and finds where each mistake came from. I bring hypotheses for it to test, and I say why I ask: "I'm not judging, I'm trying to understand where it comes from so we can avoid it in new sessions."
 
-Each retro ends in pull requests to the harness, not in a list of lessons. A lesson nobody encodes is gone by the next compaction.
+Each retro ends in pull requests to the harness, not in a list of lessons. My runs used to end unpredictably. "Sometimes it opens a PR, other times it opens 6 PRs, other times it doesn't open and left the work on a worktree." I ran a retro on the harness itself, and half an hour later the harness changed so that every run ends in one handoff pull request, which the agent opens without asking me. A lesson nobody encodes is gone by the next compaction.
 
 ## Prompts are code
 

@@ -48,17 +48,21 @@ For a long run on a product, I read the plan, the result in production, and the 
 
 ## Proof has a cost
 
-Agents over-verify as readily as they under-verify. These corrections come from two weeks:
+Agents over-verify as readily as they under-verify. On phi-router the extra proof cost me time and tied up my machine.
+
+Partway through the build I asked "Why is this taking so long?" The agent looked at its own run and admitted three to five review rounds on every pull request, quality bars set higher than the tickets asked for, and tickets sitting idle. It narrowed the rule for what blocks a merge, sent adversaries only after a second failed review, and started every ticket that nothing blocked.
+
+The next day the run went too far again. I had asked for copy changes and adjustments to the terminal UI, and every check still ran the formal models. I paused the work and wrote: "We are overcomplicating things. Only verify the things we are improving, basically the UX. I don't care about formal proof of everything. Don't hog my CPU." The agent dropped to one light review per pull request with at most two agents at a time, let CI be the gate, and cut three follow-ups that were not UX work.
+
+Shorter corrections said the same thing:
 
 - "Stop running all gates again on every small change."
 - "Evals should be short and precise and not be run like crazy. They are the final gate, not a check to run every single action."
-- "Only verify the things we are improving. I don't care about formal proof of everything. Don't hog my CPU."
-- "Just answer, I don't want you to run a benchmark."
-- One pull request went through six verifier rounds. Another project averaged three to five review rounds per pull request.
+- "Just answer, I don't want you to run a benchmark." An agent had started a nine-minute comparison of speech-to-text models to answer my question.
 
-Those corrections produced the check rules in [chapter 02](02-the-repo.md), plus two more. Adversarial review runs only after a second failed review. Verification covers what the change touches, and no more.
+The first two became the check rules in [chapter 02](02-the-repo.md).
 
-Both directions are true at once. In the same week I said "without skipping verification, of course" and "skip verification, I will test drive it myself." The difference is who does the proof. I cut repeated checks and extra review rounds, but never the proof that the change works. When I skip the agent's verification, I take it on myself.
+Both directions are true at once. In the same week I said "without skipping verification, of course" and "skip verification, I will test drive it myself." The difference is who does the proof, so when I skip the agent's verification I take it on myself. I cut repeated checks and extra review rounds, but never the proof that the change works.
 
 ## Reviewing other people's pull requests
 

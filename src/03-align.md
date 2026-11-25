@@ -31,7 +31,7 @@ A good definition of done names a measurement or a state anyone can check. One o
 Restating catches two failures that agents commit often:
 
 - **Shrinking the scope.** On one project the agent wrote a definition of done that covered two sites when the request named five. It happened twice in the same project.
-- **Swapping the outcome for a proxy.** An agent framed a session as "get the code into production" when the goal was the weekly hours target. Code in production is a step. The hours target is the outcome.
+- **Swapping the outcome for a proxy.** An agent framed a session as "get the code into production" when the goal was the weekly hours target. Code in production is only a step, and by [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law) a measure stops being a good measure once it becomes the target. The hours target is the outcome.
 
 ## Decisions arrive as numbered calls with a pick
 

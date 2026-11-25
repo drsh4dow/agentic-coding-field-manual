@@ -8,12 +8,12 @@ Agents add. Ask for a fix, and you get the fix plus a helper, a fallback, and a 
 
 ## What adding looks like
 
-From two weeks of my sessions:
+The clearest case came from my own harness. The owned work tool is how the root starts delegates and background jobs and gets their results back, as [the harness appendix](appendix-harness.md#owned-work) describes. One agent set out to redesign it to fix a problem that a few lines of instructions would solve. "Why are we reengineering the owned work tool? Isn't this more related to instructions?" The agent agreed, and the pull request shrank to five lines.
+
+The same habit showed up across two weeks of sessions:
 
 - A pull request with a diff over 20,000 lines. "Is it truly needed? I seriously doubt it."
 - A plugin that shipped minified bundle files to the main branch. I moved the bundle off main and turned off minification.
-- An agent that redesigned a tool when a few lines of instructions would do. "Why are we reengineering the owned work tool? Isn't this more related to instructions?" The pull request shrank to five lines.
-- A pull request that duplicated a feature the agents already had.
 - A pull request that shrank to three lines once I asked what it was for.
 
 ## Net negative is the target
@@ -41,7 +41,7 @@ Consolidation has a limit. When each merge deploys to production, separate pull 
 ## Subtract from the product, too
 
 - In phi-router: "Nobody uses the pin command. Drop it."
-- We removed an undo feature for an automation, because it was "a catastrophic design failure that leads to a lot of edge cases."
+- We removed an undo feature for a production automation, because it was "a catastrophic design failure that leads to a lot of edge cases." The automation writes to production on its own, so an undo would need a way to reverse every kind of write it makes, and each kind brings its own edge cases.
 - The target for phi-router is what HIPAA compliance needs: "anything more is just bloat, anything more has to be actively removed to simplify."
 
 Subtraction needs evidence like any other change. On a different project I wanted to drop a pinning feature too, and the agent proposed measuring its use first. The numbers showed people used it. It stayed.

@@ -26,7 +26,7 @@ Earlier chapters already tell the most common ones, such as reading a question a
 
 ## My anti-patterns
 
-**Bulk approval without reading, or [automation bias](https://en.wikipedia.org/wiki/Automation_bias).** I answered "agree on all six picks," and those picks filed issues I closed as noise the same night. A one-line "agree" is a review, so I read the picks before I type it.
+**Bulk approval without reading.** I answered "agree on all six picks" out of [automation bias](https://en.wikipedia.org/wiki/Automation_bias), the habit of trusting what an automated system proposes without checking it, and those picks filed issues I closed as noise the same night. A one-line "agree" is a review, so I read the picks before I type it.
 
 **The acceptance spiral, at fleet scale.** With one agent, the risk is accepting one diff after another until you are a passenger. With a fleet, the spiral is approving plans, merges, and messages faster than I understand them. [Chapter 05](05-verify.md) describes what I review now. I still don't approve what I don't understand.
 
