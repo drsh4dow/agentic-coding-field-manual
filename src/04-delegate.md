@@ -33,7 +33,7 @@ An agent works alone only when I say so, in words, in that session:
 
 A grant names what it covers. In two weeks my grants included opening pull requests without asking, merging once a verifier passed, writing to production, and running an infrastructure apply. A grant written in an old handoff note is history. A new session needs my word again.
 
-Some things wait for me even under a grant, such as force-pushes to shared branches, data deletion, and messages to people. [Chapter 07](07-write.md) covers how messages to people work.
+Some things wait for me even under a grant, such as force-pushes to shared branches, data deletion, and messages to people. Amazon calls these [one-way doors](https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF), decisions you can't undo, so they get care instead of speed. A pull request is a two-way door, because a revert undoes it. [Chapter 07](07-write.md) covers how messages to people work.
 
 ## Don't make me the relay
 
@@ -43,25 +43,25 @@ An agent that stops to ask me for a password prompt, a login, or a file it could
 - A shared browser profile holds my logins. The agent drives the flow, and I type only a password or a code.
 - For a step only I can take, the agent writes a guided script with the `wizard` skill, and I run it.
 
-Access is not permission to push through every wall. In my shared browser one agent kept clicking through a CAPTCHA and account recovery screens, and captured a recovery code on the way. "Dude, what are you doing?" When a site asks to prove a human is present, the agent stops and asks.
+Access is not permission to get past every check a site puts up. In my shared browser one agent kept clicking through a CAPTCHA and account recovery screens, and it captured a recovery code on the way. "Dude, what are you doing?" When a site asks for proof that a human is present, the agent stops and asks me.
 
 ## Swarms, arenas, and adversaries
 
 Three patterns cover most fan-out:
 
-- A **swarm** splits one job into slices, gives each slice to a leaf, and merges the reports. This manual came from one: ten leaves read 84 sessions, one leaf mapped the harness, and the root merged the eleven reports.
-- An **arena** races several candidates on one brief, has a judge from another vendor rank them, and grafts the best parts into one result. I use it for designs where a single attempt would lock in the wrong shape.
-- **Interrogate** sends adversaries on several models to break a change. Only findings they prove with a run count. It runs after a second failed review of the same pull request, not on every change.
+- A **swarm** splits one job into slices, gives each slice to a leaf, and merges the reports. This manual came from one. Ten leaves read 84 sessions, one leaf mapped the harness, and the root merged the eleven reports.
+- An **arena** races several candidates on one brief, has a judge from another vendor rank them, and combines the best parts into one result. I use it for designs where a single attempt could settle on the wrong shape.
+- **Interrogate** sends adversaries on several models to break a change. A finding counts only if they prove it with a run. It runs after a second failed review of the same pull request, not on every change.
 
 ## Respect the model table
 
-The model table in [chapter 01](01-harness.md) is a rule, not a hint. Early on, a root running my most expensive model started every helper on that model too, because its briefs named no model. "Don't use that model, it is only allowed for yourself." Now every delegate names a model from the table. I run several subscription accounts. When one hits its rate limit, the delegate moves to another, so the fleet keeps running.
+The model table in [chapter 01](01-harness.md) is a rule, not a hint. Early on, a root running my most expensive model started every helper on that model too, because its briefs named no model. "Don't use that model, it is only allowed for yourself." Now every delegate names a model from the table.
 
 ## Steering a running fleet
 
 I steer while the run goes. The messages are short:
 
-- "Report progress." "Why is this taking so long?" Both ask for the state of affairs and what blocks it.
+- "Report progress." "Why is this taking so long?" Both ask for the current state and what blocks it.
 - "Pause the work, I'm going to reboot." [Chapter 08](08-memory.md) covers what the root does next.
 - "Kill the last child, it runs a task that will take days." The root owns every job it starts and can stop any of them.
 

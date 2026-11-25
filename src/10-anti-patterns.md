@@ -28,13 +28,13 @@ The rest:
 
 **Idling in a self-made wait.** An agent gave itself a ten-minute hold before a merge and sat in it. "What are you waiting for?"
 
-**Stopping at the first wall.** An agent that hit a login problem proposed asking the customer to change their email, on the account they could not reach. "We cannot tell the customer to change his email if he cannot access his own account." Try the next path.
+**Stopping at the first blocker.** An agent that hit a login problem proposed asking the customer to change their email, on the account they could not reach. "We cannot tell the customer to change his email if he cannot access his own account." Try the next path.
 
 **A stalled delegate nobody stopped.** An owner spent a whole day producing a demo video. The root checks on long jobs and restarts or stops the ones that stall.
 
 ## My anti-patterns
 
-**Bulk approval without reading.** I answered "agree on all six picks," and those picks filed issues I closed as noise the same night. A one-line "agree" is a review. I read the picks before I type it.
+**Bulk approval without reading.** I answered "agree on all six picks," and those picks filed issues I closed as noise the same night. I had fallen for [automation bias](https://en.wikipedia.org/wiki/Automation_bias), the habit of trusting a machine's suggestion without checking it. A one-line "agree" is a review, so I read the picks before I type it.
 
 **The acceptance spiral, at fleet scale.** The old manual warned about accepting one diff after another until you are a passenger. With a fleet, the spiral is approving plans, merges, and messages faster than I understand them. [Chapter 05](05-verify.md) describes what I review now. I still don't approve what I don't understand.
 
