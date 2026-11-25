@@ -55,7 +55,7 @@ Three patterns cover most fan-out:
 
 ## Respect the model table
 
-The model table in [chapter 01](01-harness.md) is a rule, not a hint. Early on, a root running my most expensive model started every helper on that model too, because its briefs named no model. "Don't use that model, it is only allowed for yourself." Now every delegate names a model from the table.
+The model table in [the harness appendix](appendix-harness.md) is a rule, not a hint. Early on, a root running my most expensive model started every helper on that model too, because its briefs named no model. "Don't use that model, it is only allowed for yourself." Now every delegate names a model from the table.
 
 ## Steering a running fleet
 
