@@ -1,6 +1,6 @@
 # Sessions end, work doesn't
 
-The old manual said to never compact and to start a fresh session instead. That advice fit sessions of an hour. My runs now last days, and they survive reboots, harness upgrades, and many compactions. The work lives on disk, not in the context window.
+A common rule is to never compact, and to start a fresh session instead. That rule fits sessions of an hour. I stopped following it because my runs now last days. They survive reboots, harness upgrades, and many compactions. The work lives on disk, not in the context window.
 
 ## The state folder
 

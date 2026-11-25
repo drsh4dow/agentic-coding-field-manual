@@ -54,7 +54,7 @@ Grilling produces three things:
 2. A spec written with `/skill:to-spec` that holds the destination and the definition of done.
 3. The first few tickets, and no more.
 
-I tried filing all the tickets up front. One spec produced 32 tickets, each one checked by a cold reader, a fresh agent that reads only the ticket and reports what it can't follow. Those tickets decided the *how* before anyone had learned anything. I dropped ticket-first planning the next day. Now I use [rolling-wave planning](https://en.wikipedia.org/wiki/Rolling-wave_planning), which plans near work in detail and later work roughly. The implementer files the tickets for the next slice when it gets there.
+I tried filing all the tickets up front. The phi-router spec in [chapter 01](01-harness.md) produced 32 tickets, each one checked by a cold reader, a fresh agent that reads only the ticket and reports what it can't follow. Those tickets decided the *how* before anyone had learned anything. I dropped ticket-first planning the next day. Now I use [rolling-wave planning](https://en.wikipedia.org/wiki/Rolling-wave_planning), which plans near work in detail and later work roughly. The implementer files the tickets for the next slice when it gets there.
 
 ## Prototype when you can't picture it
 
