@@ -10,11 +10,11 @@ I rewrote it from evidence. I read two weeks of my own sessions: 84 working sess
 
 ## The new problem
 
-The old risk was loss of agency. You stop thinking and become a passenger in your own codebase. That risk is still here, but volume changed its shape. The [No AI Slop manifesto](https://www.slopmanifesto.com/) says it in its first belief:
+The old risk was loss of agency. You stop thinking and become a passenger in your own codebase. That risk is still here, but the volume of agent work changed it. The [No AI Slop manifesto](https://www.slopmanifesto.com/) says so in its first belief:
 
 > AI is the most useful tool most of us have ever worked with, but a swarm of agents can produce more work in a single day than a person can review in our lifetime.
 
-And it defines the cost:
+And it defines slop:
 
 > Slop is when we put less effort into producing something than we ask the consumer to spend understanding it.
 
@@ -32,7 +32,7 @@ The manifesto lists five values. Each one maps to a rule I hold agents to.
 | Better work over easier work | Proof on the real system, a reviewer from another vendor, and a pass that deletes code. |
 | Improving the system over patching the output | A mistake I correct twice becomes a rule, a check, or a gate. |
 
-In short, **I own the destination and the judgment, and agents do the work.** The rest of this manual is about keeping my attention on the first part.
+**I own the destination and the judgment, and agents do the work.** The rest of this manual is about keeping my attention on the first part.
 
 ## What is in this manual
 
@@ -40,7 +40,7 @@ In short, **I own the destination and the judgment, and agents do the work.** Th
 - [The repo agents work in](02-the-repo.md) covers the shared documents, checks, and tests a repo needs before agents touch it.
 - [Align before autonomy](03-align.md) is how a task gets a destination before any agent runs alone.
 - [Delegate the work](04-delegate.md) is how the work gets split across agents and how far they may go.
-- [Verify in proportion to the stakes](05-verify.md) is what counts as done, and what proof costs.
+- [Verify in proportion to the stakes](05-verify.md) is what proves a change works, and what that proof costs.
 - [Subtract](06-subtract.md) is the habit agents lack most.
 - [Write for the reader](07-write.md) is the manifesto applied to every word an agent produces.
 - [Sessions end, work doesn't](08-memory.md) is how work survives restarts, compaction, and handoffs.
@@ -50,4 +50,4 @@ In short, **I own the destination and the judgment, and agents do the work.** Th
 
 ## Who this is for
 
-Engineers who already ship with coding agents and now run more than one at a time. If you still decide whether to use agents at all, read the manifesto first. This manual assumes you already have opinions about linting, types, and tests.
+This manual is for engineers who already ship with coding agents and now run more than one at a time. If you are still deciding whether to use agents at all, read the manifesto first. This manual assumes you already have opinions about linting, types, and tests.

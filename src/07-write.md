@@ -4,7 +4,7 @@
 >
 > [No AI Slop manifesto](https://www.slopmanifesto.com/), belief 2
 
-Many of my corrections in two weeks were about writing, not code. Agents write status updates, pull request bodies, action items, tickets, messages to colleagues, and notes for other agents. Each of these is cheap for the agent and costs the reader. That asymmetry is the whole problem.
+Many of my corrections in two weeks were about writing, not code. Agents write status updates, pull request bodies, action items, tickets, messages to colleagues, and notes for other agents. Each one is cheap for the agent to write and costs the reader time. That asymmetry is the whole problem.
 
 ## Two readers, two rules
 
@@ -35,7 +35,7 @@ A pull request body has six headings: Why, What changed, Scope, Tradeoffs, Blast
 
 ## Status updates
 
-A status update to a project's stakeholders follows four rules I learned the hard way:
+A status update to a project's stakeholders follows four rules, each from a correction:
 
 - State facts, without names or dependencies on named people.
 - Measure pace from what shipped, not from projected dates.
@@ -44,7 +44,9 @@ A status update to a project's stakeholders follows four rules I learned the har
 
 ## Action items
 
-When an agent needs me, it writes an action item. Each item is one call, and it says what the call is, the agent's pick, what the pick changes, the evidence, the risk, and why only I can make it. "Don't keep adding action items for the sake of adding them." An agent that sends me 25 items has not done its job. In one case most of the 25 were bullets inside drafted messages that the Actions panel in Herdr counted as items, so the format check now prevents that.
+When an agent needs me, it writes an action item. Each item holds one call. It states the call, the agent's pick, what the pick changes, the evidence, the risk, and why only I can make the call. "Don't keep adding action items for the sake of adding them."
+
+An agent that sends me 25 items has not done its job. In one case, most of the 25 were bullets inside drafted messages, and the Actions panel in Herdr counted each bullet as an item. The format check now prevents that.
 
 ## Messages to people
 
