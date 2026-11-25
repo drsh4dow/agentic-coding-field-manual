@@ -13,7 +13,7 @@ The [No AI Slop manifesto](https://www.slopmanifesto.com/) was written by the sp
 | 7. When someone sends us slop, we tell them, kindly, and ask them to review it first. | Reviews of colleagues' pull requests | [05](05-verify.md) |
 | 8. There will always be alpha in reviewing something. | I review the plan, the design, the result, and the code when stakes call for it | [05](05-verify.md) |
 | 9. Agent reviews, linters, and verifiers are useful but not sufficient. | Cross-vendor verdicts plus my own review, scaled to the stakes | [05](05-verify.md) |
-| 10. What shipped, who's using it, and how it's helping them matters FAR MORE than lines of code, prs merged, tokens spent, or the number of agents running in parallel. | A definition of done that is a measured outcome | [03](03-align.md), [04](04-delegate.md) |
+| 10. What shipped, who's using it, and how it's helping them matters FAR MORE than lines of code, prs merged, tokens spent, or the number of agents running in parallel. | Done means a measured outcome | [03](03-align.md), [04](04-delegate.md) |
 | 11. Unreviewed output isn't always necessarily bad. | Prototypes skip code review and verification because they get thrown away. I still look at each one and pick | [03](03-align.md) |
 | 12. When a mistake shows up twice, we scale ourselves and our team by improving the system and its guardrails. | Twice means structure, retros, gates in code | [09](09-fix-the-system.md) |
 

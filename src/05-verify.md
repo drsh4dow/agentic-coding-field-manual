@@ -15,17 +15,17 @@ The old manual's rule was "read every diff before committing, every one." At fle
 - **Watch after deploy.** After a production release the agent reads logs and production data. It keeps a switch ready to turn the feature off if errors appear.
 - **Drive it with the project's verification skill.** See [chapter 02](02-the-repo.md).
 
-## A verdict from another vendor, at the exact head
+## A verdict from another vendor, on the exact commit
 
 Every pull request gets a verifier from a different model family than the one that wrote it. The verifier records its verdict against the exact head commit. A merge wrapper refuses to merge without that verdict. A new push needs a new verdict, unless it is a rebase that left the patch unchanged.
 
-A cross-vendor review also runs over the decision trail. In one run it caught the root claiming a fix that had not landed. The root reopened the ticket.
+A cross-vendor review also runs over the decision trail. In one run it caught the root claiming a fix that had not landed, and the root reopened the ticket.
 
 ## Root cause or nothing
 
 When I review a fix, mine or a colleague's, my first question is whether it fixes the cause or patches a symptom. "My main question here is if we are handling the root cause or patching here."
 
-Agents state causes with more confidence than they have. One blamed a failure on memory and wrote a pull request to raise the heap. I asked: "Are you 1000% sure this is due to an OOM? And not something else?" The agent admitted about 75% confidence. It measured before it opened the pull request.
+Agents state causes with more confidence than they have. One blamed a failure on memory and wrote a change to raise the heap. I asked: "Are you 1000% sure this is due to an OOM? And not something else?" The agent admitted about 75% confidence. It measured before it opened the pull request.
 
 Numbers get the same treatment. Before an agent reports a number, it explains what produced it.
 

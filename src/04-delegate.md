@@ -16,12 +16,12 @@ A typical run in my sessions goes like this:
 4. One owner per slice builds in its own git worktree, on the `judgment` model.
 5. A verifier from another vendor checks each pull request at its exact head commit.
 6. The root merges what passed, deploys when I granted it, and uses the result on the real system.
-7. After each wave of slices, a cut pass deletes what the wave did not need. See [chapter 06](06-subtract.md).
+7. After each batch of slices, a cut pass deletes what the batch did not need. See [chapter 06](06-subtract.md).
 8. I get one handoff pull request, or as few as the work allows.
 
 ## Size the work to a session, not a calendar
 
-I used to plan in dated milestones. Then I grouped work into waves, each one sized to a single session of the harness. By the end of the two weeks I gave a whole project to one session.
+I used to plan in dated milestones. Then I grouped work into batches, each one sized to a single session of the harness. By the end of the two weeks I gave a whole project to one session.
 
 Dates hurt agent work, because agents underestimate their own speed. One agent marked a project "at risk" by projecting dates that were not part of our plan, while the pace we had measured said otherwise. My instruction now is to "give tasks and owners and let them run, don't mandate dates, the key is to have a clear DoD." Measure the pace you have, not the pace a human team would have.
 
@@ -33,7 +33,7 @@ An agent works alone only when I say so, in words, in that session:
 
 A grant names what it covers. In two weeks my grants included opening pull requests without asking, merging once a verifier passed, writing to production, and running an infrastructure apply. A grant written in an old handoff note is history. A new session needs my word again.
 
-Some things wait for me even under a grant, such as force-pushes to shared branches, data deletion, and messages to people. Amazon calls these [one-way doors](https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF), decisions you can't undo, so they get care instead of speed. A pull request is a two-way door, because a revert undoes it. [Chapter 07](07-write.md) covers how messages to people work.
+Some things wait for me even under a grant, such as force-pushes to shared branches, data deletion, and messages to people. Amazon calls these [one-way doors](https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF), decisions you can't undo, so they get care instead of speed. A pull request is a two-way door, because a revert undoes its code, though not what a deploy already did. [Chapter 07](07-write.md) covers how messages to people work.
 
 ## Don't make me the relay
 

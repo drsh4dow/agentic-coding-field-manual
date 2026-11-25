@@ -31,7 +31,7 @@ A good definition of done names a measurement or a state anyone can check. One o
 Restating catches two failures that agents commit often:
 
 - **Shrinking the scope.** On one project the agent wrote a definition of done that covered two sites when the request named five. It happened twice in the same project.
-- **Swapping the outcome for a proxy.** An agent framed a session as "get the code into production" when the goal was the weekly hours target. Code in production is a step. The hours target is the outcome. An agent that aims at the step runs into [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law), where a measure that becomes the target stops measuring the goal.
+- **Swapping the outcome for a proxy.** An agent framed a session as "get the code into production" when the goal was the weekly hours target. Code in production is a step. The hours target is the outcome.
 
 ## Decisions arrive as numbered calls with a pick
 
@@ -64,7 +64,7 @@ Sometimes I can't judge a plan because I can't see it. "I still can't visualize 
 
 An agent that agrees with everything is no help. I want pushback, with evidence:
 
-- I called some infrastructure rules hallucinations from an earlier agent. The agent showed with `git blame` that a colleague wrote them. I kept them.
+- I called some infrastructure rules hallucinations from an earlier agent. The agent showed with `git blame` that a colleague wrote them, so I kept them.
 - I wanted phi-router shipped as a single binary. The agent measured 82 MB and argued against it. I dropped the idea.
 
 Pushback is not license to change the task. The agent can argue about the route, but the intent is mine. When I asked an agent to design phi-router's routing, it wrote me a compliance audit of the routing policy I had already decided. "I'm not asking you to audit this. You are deviating from the task."

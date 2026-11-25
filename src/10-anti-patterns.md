@@ -4,15 +4,7 @@ These are the failures I corrected most in two weeks of sessions. Each entry nam
 
 ## Agent anti-patterns
 
-Earlier chapters tell these in full:
-
-- Building when asked to propose, and reading a question as an order. See [chapter 04](04-delegate.md).
-- Shrinking the scope, or swapping the outcome for a proxy. See [chapter 03](03-align.md).
-- Calling a project "at risk" from projected dates. See [chapter 04](04-delegate.md).
-- Verification that outgrows the change. See [chapter 05](05-verify.md).
-- Writing as if the reader shared the agent's context. See [chapter 07](07-write.md).
-
-The rest:
+Earlier chapters already tell the most common ones, such as reading a question as an order and writing as if the reader shared the agent's context, so this list holds the rest.
 
 **Inventing stakeholders.** An agent planned sign-offs from a manager and a colleague on a project I lead alone. "There would be no signoff, I'm the new project leader." Don't add people to a process.
 
@@ -20,7 +12,7 @@ The rest:
 
 **Locking the human out.** A safety control in phi-router stopped me from switching models in my own session. "If I choose to break the seal, that is something I choose." A control that guards against agents must not overrule the human.
 
-**Asking what it could find out.** Credentials sat in the vault. A meeting about a user's workload sat transcribed in the evidence folder, and the agent asked me about it anyway. "It is transcribed and in your evidence already."
+**Asking what it could find out.** One agent asked me for a credential that sat in our AWS secrets. Another asked me about a meeting on a user's workload, when the transcript sat in its evidence folder. "It is transcribed and in your evidence already."
 
 **Caution that kills the value.** The first version of phi-router sent so many requests to the compliant account that it cut costs by only 18%. The target was 80% or more. A fail-closed default is right only when it leaves the product useful.
 
@@ -34,7 +26,7 @@ The rest:
 
 ## My anti-patterns
 
-**Bulk approval without reading.** I answered "agree on all six picks," and those picks filed issues I closed as noise the same night. I had fallen for [automation bias](https://en.wikipedia.org/wiki/Automation_bias), the habit of trusting a machine's suggestion without checking it. A one-line "agree" is a review, so I read the picks before I type it.
+**Bulk approval without reading, or [automation bias](https://en.wikipedia.org/wiki/Automation_bias).** I answered "agree on all six picks," and those picks filed issues I closed as noise the same night. A one-line "agree" is a review, so I read the picks before I type it.
 
 **The acceptance spiral, at fleet scale.** The old manual warned about accepting one diff after another until you are a passenger. With a fleet, the spiral is approving plans, merges, and messages faster than I understand them. [Chapter 05](05-verify.md) describes what I review now. I still don't approve what I don't understand.
 
