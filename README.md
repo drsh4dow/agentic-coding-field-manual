@@ -1,49 +1,54 @@
 # Agentic Coding Field Manual
 
-A practical, opinionated manual for using AI coding agents with production-grade engineering discipline.
+A practical, opinionated manual for running a fleet of coding agents without shipping slop.
 
-The biggest risk of AI coding isn't bad code - it's loss of agency. A gradual surrender of control over your own codebase. This manual gives you the workflow to move faster without losing your judgment. The core thesis: **you drive, AI types.**
+A swarm of agents can produce more work in a day than you can review. This manual is about where your attention goes instead. You own the destination and the judgment, and agents do the work. It is grounded in two weeks of my own sessions with [pi-harness](https://github.com/drsh4dow/pi-harness) and leans on the [No AI Slop manifesto](https://www.slopmanifesto.com/).
 
-## Who This Is For
+## Who this is for
 
-Engineers who ship production software and want to move faster without losing their judgment. Not hobbyists. Not people who want AI to "build my app." This manual assumes you already have opinions about linting, type systems, and test strategy.
+Engineers who already ship with coding agents and now run more than one at a time. It assumes you already have opinions about linting, type systems, and test strategy.
 
-## What's Inside
+## What's inside
 
 | Chapter | Description |
-|---------|-------------|
-| [Introduction](https://drsh4dow.github.io/agentic-coding-field-manual/00-intro.html) | The core problem -- five ways AI erodes engineering agency -- and the mental model to prevent it. |
-| [Tools](https://drsh4dow.github.io/agentic-coding-field-manual/01-tools.html) | What your AI coding tool needs (plan mode, LSP, forking), OpenCode setup, and MCP servers. |
-| [Project Setup](https://drsh4dow.github.io/agentic-coding-field-manual/02-project-setup.html) | Scaffold it yourself, guardrail tooling (linter + type system at max strictness), and writing AGENTS.md. |
-| [The Loop](https://drsh4dow.github.io/agentic-coding-field-manual/03-the-loop.html) | The Plan -> Execute -> Test -> Commit workflow that separates agentic coding from vibe coding. |
-| [Testing](https://drsh4dow.github.io/agentic-coding-field-manual/04-testing.html) | No-mock philosophy -- test real behavior with real dependencies. Package-level test structure. |
-| [Anti-Patterns](https://drsh4dow.github.io/agentic-coding-field-manual/05-anti-patterns.html) | When NOT to use AI, the acceptance spiral, common failure modes, and the three-attempt rule. |
-| [Appendix: UI With Real Designs](https://drsh4dow.github.io/agentic-coding-field-manual/appendix-ui.html) | Screenshot-driven and token-driven approaches to turning real designs into code. |
+| --- | --- |
+| [Introduction](src/00-intro.md) | Why the old "you drive, AI types" model broke, and the one that replaced it. |
+| [The harness](src/01-harness.md) | Principles, playbooks, skills, roles, the model table, and the gates the rest of the manual assumes. |
+| [The repo agents work in](src/02-the-repo.md) | Glossary, standards, ADRs, AGENTS.md, strict tooling, fast checks, and tests that test something. |
+| [Align before autonomy](src/03-align.md) | Openers, a measurable definition of done, and decisions as numbered calls with a pick. |
+| [Delegate the work](src/04-delegate.md) | Slicing work across owners and leaves, grants, swarms, arenas, and steering a running fleet. |
+| [Verify in proportion to the stakes](src/05-verify.md) | Proof on the real system, cross-vendor verdicts, root causes, and what proof costs. |
+| [Subtract](src/06-subtract.md) | Net-negative diffs, cut passes, and why edge cases tend to infinity. |
+| [Write for the reader](src/07-write.md) | The manifesto applied to every pull request, status update, action item, and message. |
+| [Sessions end, work doesn't](src/08-memory.md) | State folders, pause and resume, handoffs, and what compaction drops. |
+| [Fix the system, not the output](src/09-fix-the-system.md) | Turning a repeated correction into a check, a type, or a gate. |
+| [Anti-patterns](src/10-anti-patterns.md) | The failures I corrected most, from agents and from myself. |
+| [Appendix: the manifesto, clause by clause](src/appendix-manifesto.md) | Each manifesto resolution mapped to the practice that serves it. |
 
-## Read Online
+## Read online
 
 [drsh4dow.github.io/agentic-coding-field-manual](https://drsh4dow.github.io/agentic-coding-field-manual/)
 
-## Local Development
+## Local development
 
 ### Prerequisites
 
 - [Bun](https://bun.sh/)
 - [mdBook](https://rust-lang.github.io/mdBook/)
 
-### Install Dependencies
+### Install dependencies
 
 ```bash
 bun install --frozen-lockfile
 ```
 
-### Quality Checks
+### Quality checks
 
 ```bash
 bun run lint:md
 ```
 
-### Build The Book
+### Build the book
 
 ```bash
 mdbook build
@@ -51,11 +56,11 @@ mdbook build
 
 The generated site is written to `book/`.
 
-## Repository Structure
+## Repository structure
 
-- `src/` -- Markdown source for all chapters and appendices
-- `book.toml` -- mdBook configuration
-- `.github/workflows/` -- CI (markdown linting) and GitHub Pages deployment
+- `src/` holds the Markdown source for all chapters and the appendix.
+- `book.toml` is the mdBook configuration.
+- `.github/workflows/` runs CI (markdown lint, build, link check) and the GitHub Pages deployment.
 
 ## Author
 
