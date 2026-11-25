@@ -6,35 +6,33 @@ My setup is [pi-harness](https://github.com/drsh4dow/pi-harness). It is an open 
 
 [phi-router](https://github.com/drsh4dow/phi-router) is my open source router for the coding agents pi, Claude Code, and Codex. It sends each model request to one of two accounts. A request that holds patient data goes to a HIPAA-compliant account. Everything else goes to an ordinary account. Later chapters come back to it.
 
-An earlier planning session had already written the spec as GitHub issue #1, with 32 sub-issues as tickets.
+An earlier planning session had already written the spec as GitHub issue #1, with 32 sub-issues as tickets. Filing every ticket up front is an approach I dropped the next day, and [chapter 03](03-align.md) explains why. The run below still started from those tickets.
 
 ## Restate before anything runs
 
 The agent in my terminal is the root. It talks to me, plans, hands out the work, and reports back. I told it to build issue #1 and all its sub-issues, and to bring me the tickets that needed my input. Then I asked for one thing before any work: "gather the necessary context and restate in your own words what are we doing here."
 
+Restating has its own skill in my harness, `in-your-own-words`. A skill is one of three kinds of guides, instructions an agent reads only when its trigger matches the task. The other two are principles, hard rules for how an agent decides, and playbooks, step lists for one kind of work.
+
 The root read the spec, the 32 tickets, the glossary, and the state folder that the planning session left behind. A state folder is a directory at `~/.local/state/pi-agent/<project>/<work>/`. It holds the destination, my standing instructions, and the decision trail, so the work outlives any one session.
 
 The restatement exposed a wrong belief. The agent asked me for an API key to the compliant Anthropic account. I don't have one, because that account signs in through a browser login. The spec carried the same mistake, so I had it fixed first: "update the spec and the respective tickets so we are aligned on the truth." Then I asked for a fresh restatement. It matched what I wanted, and I gave the grant in one line: "Excellent, proceed with implementation, operate autonomously."
 
-Until that line, the agent proposes and asks. After it, the agent works alone inside what the restatement covered. [Chapter 03](03-align.md) covers the restatement, and [chapter 04](04-delegate.md) covers grants.
+Until that line, the agent proposes and asks. After it, the agent works alone inside what the restatement covered.
 
 ## One owner per ticket
 
-The root doesn't write the code. It starts delegates, other agents that each get one task and report to the agent that started them. A delegate has one of two roles.
+The root doesn't write the code. It starts delegates, other agents that each get one task and report back to it. Each ticket went to an owner, a delegate that built the ticket, tested it, and committed it. Each owner worked in its own git worktree, a separate checkout of the repo, so no two owners edited the same files.
 
-An owner builds, verifies, and commits one slice of the work. Each ticket on phi-router got its own owner, working in its own git worktree, a separate checkout of the repo, so no two owners edit the same files.
-
-A leaf does one bounded task, such as a search, a review, or a measurement, and starts nothing. Before the root filed a new ticket, a leaf gave it a cold read. The leaf read only that ticket and reported what it couldn't follow.
-
-Every delegate names its model by alias, never by name. An alias names a job, and the harness maps each alias to a model. The owners ran on `judgment`, the alias for implementation and design. The cold readers ran on `worker`, the alias for research and checks.
+Smaller jobs went to leaves, delegates that do one bounded task and start nothing. Before the root filed a new ticket, a leaf acted as a cold reader, an agent that sees only the ticket and none of the run. It reported what it couldn't follow.
 
 ## A verifier from another vendor
 
-Each pull request got a verifier, a leaf on `investigator`. That alias maps to GPT, and the owners ran on Claude. A checker from the writer's family risks a [common-mode failure](https://www.adelard.com/media/vfngprxq/divchap.pdf), where one shared cause makes the writer and the checker miss the same bug. A reviewer from another vendor removes that shared cause.
+Each pull request got a verifier, a leaf that reviewed it. The verifiers ran on GPT, and the owners ran on Claude. A checker from the writer's family risks a [common-mode failure](https://www.adelard.com/media/vfngprxq/divchap.pdf), where one shared cause makes the writer and the checker miss the same bug. A reviewer from another vendor removes that shared cause.
 
-The verifier checks the pull request at its exact head commit. A wrapper around `gh` refuses to merge unless a verifier passed that commit. When a pull request failed review twice, the root sent four adversaries on different models to break it. The root merged only after a review passed. Partway through I made merging a standing instruction: "you merge the open PRs that are ready." The root recorded it in `STATE.md`, the state folder's main file.
+The verifier checks the pull request at its exact head commit. A wrapper around `gh`, the GitHub command line tool, refuses to merge unless a verifier passed that commit. When a pull request failed review twice, the root sent four adversaries, agents on different models whose only job was to break the change. The root merged only after a review passed. Partway through I made merging a standing instruction: "you merge the open PRs that are ready." The root recorded it in `STATE.md`, the state folder's main file.
 
-In Toyota's terms the merge wrapper is [jidoka](https://global.toyota/en/company/vision-and-philosophy/production-system/). Under jidoka a machine stops itself on a defect, so one person can run many machines without watching each one. Gates like this let me run a fleet without reading every diff. [Chapter 05](05-verify.md) covers verification.
+In Toyota's terms the wrapper is [jidoka](https://global.toyota/en/company/vision-and-philosophy/production-system/). Under jidoka a machine stops itself on a defect, so one person can run many machines without watching each one. Gates like this let me run a fleet without reading every diff.
 
 ## Decisions by number
 
@@ -44,7 +42,7 @@ I answer by number. "1. yes. 2. yes. 3. agree." When a question made no sense, I
 
 ## Pause, then continue
 
-The run outlived my machine. I typed "pause the work, I'm going to reboot my machine." The root cancelled its delegates, pushed the unpushed branches, and archived its files from `/tmp`. It wrote `STATE.md` and `decisions.tsv`, the decision trail, into the state folder. After the reboot I typed "continue," and it picked up where it had stopped. I paused phi-router this way three times. [Chapter 08](08-memory.md) covers the state folder.
+The run outlived my machine. I typed "pause the work, I'm going to reboot my machine." The root cancelled its delegates, pushed the unpushed branches, and archived its files from `/tmp`. It wrote `STATE.md` and `decisions.tsv`, the decision trail, into the state folder. After the reboot I typed "continue," and it picked up where it had stopped. I paused phi-router this way three times.
 
 ## Using it myself
 

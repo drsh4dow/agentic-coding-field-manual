@@ -2,7 +2,7 @@
 
 [pi-harness](https://github.com/drsh4dow/pi-harness) is a config folder for the [pi](https://github.com/earendil-works/pi) coding agent, plus panels for the [Herdr](https://herdr.dev/) terminal app. [Chapter 01](01-harness.md) shows it at work on one run.
 
-The old manual asked for a tool with plan mode, LSP access, and conversation forking. Those still help. Running a fleet needs more:
+For one agent, I wanted a tool with plan mode, LSP access, and conversation forking. Those still help, but running a fleet needs more:
 
 - Agents that start other agents and wait on them, without me relaying messages.
 - Instructions that load when they apply, so the prompt stays small.
@@ -26,7 +26,7 @@ The harness has three kinds of guides. Each guide has a trigger that says when i
 
 ## The model table
 
-A delegate picks its model by alias, never by name. Every model runs at high reasoning effort.
+A delegate picks its model by the alias for its job, never by the model's own name. This table maps each alias to a model. Every model runs at high reasoning effort.
 
 | Alias | Model | Used for |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ Herdr shows the fleet in these panels:
 
 ## Prompt size
 
-The old manual warned that every MCP server and skill bloats the prompt. That is still true, but the answer changed. Guides load by trigger, so 55 skills cost one line each until one applies. I also measure which guides load and cut the ones that never do, as [chapter 09](09-fix-the-system.md) describes.
+Every MCP server and every skill adds text to the prompt. In my harness, guides load by trigger, so 55 skills cost one line each until one applies. I also measure which guides load and cut the ones that never do, as [chapter 09](09-fix-the-system.md) describes.
 
 ## Credits
 

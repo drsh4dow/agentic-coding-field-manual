@@ -12,9 +12,9 @@ Every repo I work in has three documents that agents must read before they name 
 
 ## AGENTS.md
 
-`AGENTS.md` is still the repo's system prompt. Three rules from the old manual hold. Write it by hand. Keep it short. Add a rule only when an agent makes the same mistake twice.
+`AGENTS.md` is the repo's system prompt. Write it by hand. Keep it short. Add a rule only when an agent makes the same mistake twice.
 
-Two rules are new:
+Two more rules apply:
 
 - **Dense words.** Cut every line that changes no behavior, such as "write clean code." [Chapter 07](07-write.md) covers writing for agents.
 - **Progressive disclosure.** `AGENTS.md` holds what applies everywhere and points to the document that holds the rest. It never points at a spec or a ticket, because those change and `AGENTS.md` doesn't.
@@ -23,18 +23,18 @@ When a repo's `AGENTS.md` has grown into a mess, I run the `writing-for-agents` 
 
 ## Guardrails at maximum strictness
 
-This part of the old manual still holds. Set the linter and the type checker to their strictest settings. Then loosen a rule only on purpose and only where it must be loose. An agent can't merge what the linter rejects.
+Set the linter and the type checker to their strictest settings. Then loosen a rule only on purpose and only where it must be loose. An agent can't merge what the linter rejects.
 
-Two things are new:
+I add two more guardrails:
 
 - **Lint rules aimed at agent habits.** My harness repo runs oxlint with the [anti-slop rules](https://github.com/dmmulroy/anti-slop). Two examples are `no-module-mocking`, which rejects module-level mocks such as `vi.mock()`, and `no-chained-type-assertions`, which stops an agent from casting its way past the type checker.
 - **No code comments.** An agent narrates its code in comments, and the next agent changes the code without changing the comment. The `no-comments` skill moves each comment to a better home: a name, a type, a test, an ADR, or a commit message. Documentation comments on a public API are fine. Comments that narrate code are not.
 
 ## One check command, and make it fast
 
-Wrap linting, formatting, and type checking in one command that agents run before every push. That rule is unchanged.
+Wrap linting, formatting, and type checking in one command that agents run before every push.
 
-What changed is the cost of a slow check. With six owners, a ten-minute check runs six times on one machine. I asked the same question in three repos within two weeks: "how long does the check take? What can we do to cut that number down to the minimum?" The answers were the same each time:
+A fleet makes a slow check expensive. With six owners, a ten-minute check runs six times on one machine. I asked the same question in three repos within two weeks: "how long does the check take? What can we do to cut that number down to the minimum?" The answers were the same each time:
 
 - Run the full check once on each commit an agent pushes, not after every edit.
 - Run independent checks in parallel.
@@ -43,9 +43,9 @@ What changed is the cost of a slow check. With six owners, a ten-minute check ru
 
 ## Tests that test something
 
-The no-mocks stance from the old manual still holds. Test real behavior against real dependencies. If you can't test something without a mock, the boundary sits in the wrong place.
+Test real behavior against real dependencies, not mocks. If you can't test something without a mock, the boundary sits in the wrong place.
 
-Agents follow two newer habits:
+Agents follow two more habits:
 
 - **Write the failing test first.** For a bug, the regression test fails before the fix and passes after it. That failing run proves the test catches the bug.
 - **Watch the test volume.** One agent PR had four lines of test for every line of new code, with the same schema copied into 31 test files. I called it slop, and the agent agreed after counting. Keep a test only if it catches a regression that nothing else would catch.

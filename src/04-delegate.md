@@ -27,7 +27,7 @@ Dates hurt agent work, because agents underestimate their own speed. One agent m
 
 ## Grants are explicit and end with the session
 
-An agent works alone only when I say so, in words, in that session:
+An agent works alone only when I say so, in words, in that session. In this grant, the 2.5 hours are the time a person spends each week on a manual task, measured in production:
 
 > Operate autonomously, work end to end. The DoD is the 2.5-hour target. Don't stop until that is reached.
 

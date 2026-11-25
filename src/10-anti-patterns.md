@@ -28,10 +28,10 @@ Earlier chapters already tell the most common ones, such as reading a question a
 
 **Bulk approval without reading, or [automation bias](https://en.wikipedia.org/wiki/Automation_bias).** I answered "agree on all six picks," and those picks filed issues I closed as noise the same night. A one-line "agree" is a review, so I read the picks before I type it.
 
-**The acceptance spiral, at fleet scale.** The old manual warned about accepting one diff after another until you are a passenger. With a fleet, the spiral is approving plans, merges, and messages faster than I understand them. [Chapter 05](05-verify.md) describes what I review now. I still don't approve what I don't understand.
+**The acceptance spiral, at fleet scale.** With one agent, the risk is accepting one diff after another until you are a passenger. With a fleet, the spiral is approving plans, merges, and messages faster than I understand them. [Chapter 05](05-verify.md) describes what I review now. I still don't approve what I don't understand.
 
 **Leaving a mistake in my own docs.** Twice an agent followed my own wrong instruction, once a misnamed term and once a wrong line in a requirements doc. When the source is wrong, I fix the source, not only the output.
 
-## What replaced the three-attempt rule
+## After two failed fixes, check the premise
 
-The old manual said to write the code yourself after three failed attempts. Now the rule is about the premise. When two fixes that rest on the same belief both fail, the belief becomes the suspect. The agent rechecks the premise, the design, and the requirement before it tries a third patch. In one review, the agent stopped after its second failed patch and redesigned the change.
+A common rule is to write the code yourself after three failed attempts. I stopped counting attempts and started checking the belief behind them. When two fixes that rest on the same belief both fail, the belief becomes the suspect. The agent rechecks the premise, the design, and the requirement before it tries a third patch. In one review, the agent stopped after its second failed patch and redesigned the change.

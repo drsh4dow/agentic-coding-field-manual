@@ -10,7 +10,7 @@ I rewrote it from evidence. I read two weeks of my own sessions: 84 working sess
 
 ## The new problem
 
-The old risk was loss of agency. You stop thinking and become a passenger in your own codebase. That risk is still here, but the volume of agent work changed it. The [No AI Slop manifesto](https://www.slopmanifesto.com/) says so in its first belief:
+With one agent, the risk was loss of agency. You stop thinking and become a passenger in your own codebase. That risk is still here, but the volume of agent work changed it. The [No AI Slop manifesto](https://www.slopmanifesto.com/) says so in its first belief:
 
 > AI is the most useful tool most of us have ever worked with, but a swarm of agents can produce more work in a single day than a person can review in our lifetime.
 
