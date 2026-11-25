@@ -16,13 +16,13 @@ Earlier chapters already tell the most common ones, such as reading a question a
 
 **Caution that kills the value.** The first version of phi-router sent so many requests to the compliant account that it cut costs by only 18%. The target was 80% or more. A fail-closed default is right only when it leaves the product useful.
 
-**Heartbeats with nothing in them.** A "nothing changed" report every few hours is noise. Report when something changes, and slow the reports down when nothing will.
+**Heartbeats with nothing in them.** One agent posted a "nothing changed" report every few hours until I said "stop the heartbeat." On another run I slowed the heartbeat to once every five hours. Report when something changes.
 
 **Idling in a self-made wait.** An agent gave itself a ten-minute hold before a merge and sat in it. "What are you waiting for?"
 
 **Stopping at the first blocker.** An agent that hit a login problem proposed asking the customer to change their email, on the account they could not reach. "We cannot tell the customer to change his email if he cannot access his own account." Try the next path.
 
-**A stalled delegate nobody stopped.** An owner spent a whole day producing a demo video. The root checks on long jobs and restarts or stops the ones that stall.
+**A stalled delegate nobody stopped.** An owner had worked a whole day on a demo video, and for the last 90 minutes it had made no progress. The root restarted it with a rule for stalls. Check on long jobs, and restart or stop the ones that stall.
 
 ## My anti-patterns
 

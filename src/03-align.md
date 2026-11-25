@@ -8,9 +8,9 @@ The most expensive mistake in a long agent run happens in the first ten minutes.
 
 ## The rule
 
-An agent does not run on its own until it has a clear destination, written as a definition of done (DoD). In my words: "the agent should not go autonomously until it has a clear DoD or idea of the destination."
+An agent does not run on its own until it has a clear destination, written as a definition of done (DoD).
 
-The destination is the *what*, not the *how*. "Having a spec with a clear DoD is crucial, but deciding on the how beforehand not." I state the outcome as a [commander's intent](https://en.wikipedia.org/wiki/Mission-type_tactics), the goal a leader gives so the people doing the work can choose their own route. The agent picks the route, and it may change the route as it learns.
+The destination is the *what*, not the *how*. I state the outcome as a [commander's intent](https://en.wikipedia.org/wiki/Mission-type_tactics), the goal a leader gives so the people doing the work can choose their own route. The agent picks the route, and it may change the route as it learns.
 
 ## Openers, not templates
 
@@ -31,7 +31,7 @@ A good definition of done names a measurement or a state anyone can check. One o
 Restating catches two failures that agents commit often:
 
 - **Shrinking the scope.** On one project the agent wrote a definition of done that covered two sites when the request named five. It happened twice in the same project.
-- **Swapping the outcome for a proxy.** An agent framed a session as "get the code into production" when the goal was the weekly hours target. Code in production is only a step, and by [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law) a measure stops being a good measure once it becomes the target. The hours target is the outcome.
+- **Swapping the outcome for a proxy.** An agent framed a session as "get the code into production" when the goal was the weekly hours target. Code in production is a step. The hours target is the outcome.
 
 ## Decisions arrive as numbered calls with a pick
 

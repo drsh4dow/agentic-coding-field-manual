@@ -20,7 +20,7 @@ Steps 1 and 2 make the mistake impossible, so no agent has to remember to avoid 
 
 ## Two weeks of fixes
 
-The `wait` tool shows why the order matters. Agents waited for their jobs with `sleep`. One night I sent an agent a screenshot of my process list and asked "what are all those processes running?" They were twelve `sleep` alarms it had set for itself. The first fix, a step 3 check, was a pull request that refused `sleep` calls. I worried that agents would then burn CPU in a loop to fake a sleep, so the agent rebuilt the pull request as a step 1 change. The new `wait` tool blocks until results arrive and returns them in its reply, and with nothing left to sleep for, no agent has to remember the rule.
+The `wait` tool shows why the order matters. Agents waited for their jobs with `sleep`. One night I sent an agent a screenshot of my process list and asked "what are all those processes running?" They were twelve `sleep` alarms it had set for itself. The first fix was a pull request that added a check to refuse `sleep` calls. I worried that agents would then burn CPU in a loop to fake a sleep, so the agent rebuilt the pull request around a new tool instead. The new `wait` tool blocks until results arrive and returns them in its reply, and with nothing left to sleep for, no agent has to remember the rule.
 
 Three more from the same two weeks:
 
