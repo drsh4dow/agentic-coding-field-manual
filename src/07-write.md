@@ -59,7 +59,7 @@ The manifesto asks two things of a message an agent wrote:
 >
 > resolution 6
 
-Nothing leaves without my read. I own what I send.
+Nothing leaves without my read, so I meet the second half. I don't yet say when an agent drafted a chat message, so I miss the first half.
 
 ## Slop compounds
 

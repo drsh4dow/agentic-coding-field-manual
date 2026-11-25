@@ -27,7 +27,7 @@ This part of the old manual still holds. Set the linter and the type checker to 
 
 Two additions:
 
-- **Lint rules aimed at agent habits.** My harness repo runs oxlint with the [anti-slop rules](https://github.com/dmmulroy/anti-slop). Two examples are `no-module-mocking`, which enforces the no-mocks rule below, and `no-chained-type-assertions`, which stops an agent from casting its way past the type checker.
+- **Lint rules aimed at agent habits.** My harness repo runs oxlint with the [anti-slop rules](https://github.com/dmmulroy/anti-slop). Two examples are `no-module-mocking`, which rejects module-level mocks such as `vi.mock()`, and `no-chained-type-assertions`, which stops an agent from casting its way past the type checker.
 - **No code comments.** An agent narrates its code in comments, and the next agent changes the code without changing the comment. The `no-comments` skill moves each comment to a better home: a name, a type, a test, an ADR, or a commit message. Documentation comments on a public API are fine. Comments that narrate code are not.
 
 ## One check command, and make it fast
